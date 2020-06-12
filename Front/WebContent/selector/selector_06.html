@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 클래스가 abc인 요소 , 클래스는 띄어쓰기로 여러개 표기 가능! - 헬로 안녕하세요 */
+.abc{ }
+
+/* h1의 하위 요소 중에서 클래스가 abc인 요소 */
+h1 .abc{ }
+
+/* h1 태그 요소 중에서 클래스가 abc인 요소 */
+h1.abc{}
+
+/* id 가 abc인 h1 태그 요소 */
+h1#abc{}
+
+/*******************************************************************/
+
+/* title 속성을 가지고 있는 모든 요소 */
+[title]{ color: red; }
+
+/* class 속성을 가진 div 태그 요소 */
+div[class] { border: 1px solid green;}
+
+/* title 속성 값으로 greeting을 가지고 있는 h1 태그 요소 */
+h1[title="greeting"] { border: 1px solid blue;}
+
+/* title 속성값으로 greeting이라는 단어를 완전히 포함하는 h1태그요소 */
+h1[title~="greeting"] { border: 1px solid blue;}
+
+/* ***************************************************************** */
+
+/* class 값이 abc와 완전 똑같은 h1 태그 요소, 선택 대상 없음 */
+h1[class="abc"] { background: yellow;}
+
+/* class 값이 abc을 포함하는 h1 태그 요소, 띄어쓰기로 온전히 있는 것! */
+h1[class~="abc"] { background: yellow;}
+
+/* 위와 같은 뜻 */
+h1.abc {}
+
+/* ********************************************************** */
+
+/* class의 전체 문장이 te로 시작하는 h1태그 요소 */
+h1[class^="te"] { font-size: 100px; }
+
+/* class의 전체 문장이 te로 시작하는 h1태그 요소 */
+h1[class$="st"] { border: 1px dotted orange; }
+
+/* class의 값에 "d"를 포함하는 h1 태그 요소 */
+h1[class*="d"] { background: tomato; }
+
+/* 값이 abc 이거나 abc-로 시작하는 태그 요소 */
+h1[class|="te"] { font-size: 75px; }
+
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+
+<h1 class="abc test dd" title="hi">Hello</h1>
+
+<h1 class="abc st">안녕하세요</h1>
+
+<h1 class="abc~css" title="greeting message">반가워요!</h1>
+
+<div class>여기는 DIV!</div>
+
+</body>
+</html>

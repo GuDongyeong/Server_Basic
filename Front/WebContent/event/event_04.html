@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function showAlert(){
+	console.log("--- alert ---")
+	
+	var res = alert("메시지만 출력되는 창")
+	
+	console.log(res) // undefined, 반환되는 값이 없음
+}
+
+function showConfirm() {
+	console.log("--- confirm ---")
+	
+	var res = confirm("찬성이면 확인, 반대면 취소를 누르세요")
+	
+	console.log(res)
+	
+	// 반환타입, boolean
+	//	true - 확인 클릭했을 때
+	//	false - 취소를 클릭했을 때
+	// 글 삭제할 때 확인 창으로 사용
+	
+	if(res){
+		document.getElementsByTagName("li")[1].style.color = "skyblue";
+	}else{
+		document.getElementsByTagName("li")[1].style.color = "tomato";
+	}
+}
+
+function showPrompt() {
+	console.log("--- prompt ---")
+	
+	var res = prompt("상세한 이유를 작성하세요")
+	console.log(res)
+	
+	// 반환타입 string
+	//	확인버튼 클릭(엔터키 입력) - 텍스트 필드에 작성한 내용 반환
+	//	취소버튼 클릭( esc 입력 ) - null 반환
+	//	** 아무것도 작성하지 않고 확인버튼 누르면 ""반환
+	
+	
+	if(res == null){
+		console.log("취소선택")
+	}else if( res == ""){
+		console.log("입력값 없음")
+	}else{
+		console.log("입력값 >>")
+		console.log(res)
+	}
+	
+}
+
+</script>
+</head>
+<body>
+
+<h1>자바스크립트에서 제공하는 기본 대화상자</h1>
+<h3>Interaction, 대화상자(상호작용 박스)</h3>
+
+<h3>alert, confirm, prompt</h3>
+
+<hr>
+
+<ol>
+<li>
+	확인버튼과 메시지를 출력하는 alert창
+	<input type="button" onclick="showAlert()" value="확인"/>
+</li>
+
+<li>
+	확인, 취소버튼과 메시지를 출력하는 confirm 창
+	<input type="button" onclick="showConfirm()" value="확인"/>
+</li>
+
+<li>
+	메시지, 텍스트필드, 확인, 취소버튼을 제공하는 prompt창
+	<input type="button" onclick="showPrompt()" value="확인"/>
+</li>
+
+</ol>
+
+
+</body>
+</html>

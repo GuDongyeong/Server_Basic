@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var result; // 전역변수
+
+function add(n1, n2){ //덧셈
+	result = n1 + n2;
+	
+// 	return n1 + n2; // 사실 이렇게 해야 하는데
+}
+
+// function print(res) { // 출력
+function print() { // 출력
+	console.log(result)
+// 	console.log(res)
+}
+
+add(100, 200);
+print();
+// -> 이렇게 되면 두 함수가 너무 result 전역변수에 의존적이다
+// -> 이들을 하나의 블록으로 엮어주는ㄱ ㅓㅅ.. 콜백함수
+
+console.log('----------------')
+
+//콜백 함수, callback function
+//	직접 호출해서 동작하는 함수가 아닌 외부의 동작에 의해서 실행되는 함수
+//	남(다른 시스템, 함수 등등)이 호출해주는 함수
+
+function sum(n1, n2, callback){ // 매개변수로 들어간 함수가 콜백, 직접 호출하는 것이 아니라 sum이 호출해준다
+	var res = n1 + n2;
+	
+	callback(res);
+}
+
+//결과값을 console로 출력
+function display(data){
+	console.log("결과값 : " + data);
+}
+
+//콜백 함수를 전달하며 호출하기
+sum(11, 22, display);
+
+console.log('----------------')
+
+//결과값을 alert창으로 출력
+function alertResult(data){
+	alert("결과값은 " + data + "입니다.")
+}
+
+// 콜백으로 사용될 함수를 다르게 적용하여 동작(여기서는 결과 출력)을 매번 다르게 지정할 수 있다
+
+sum(111, 222, alertResult);
+
+console.log('----------------')
+
+//한번에 만드는 방법, 익명함수를 callback에 전달하기
+sum(555, 666, function(data){
+	document.write("<h1>" + data + "</h1>")
+});
+
+console.log('----------------')
+
+var write = function(data){
+	document.write("<h1>" + data + "</h1>")
+}
+
+sum(888, 999, write);
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

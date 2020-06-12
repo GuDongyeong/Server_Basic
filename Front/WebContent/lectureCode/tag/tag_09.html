@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">/* css를 작성할 수 있게 준비된 태그 영역, css 문법으로 사용해야 */
+
+/* table, th, td 태그에 스타일(CSS)을 적용한다 라는 의미 */
+table, th, td{
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>테이블 태그2</h1>
+<hr>
+
+<!-- table 태그 안쪽에는 반드시 td, th를 이용해서 데이터를 표현한다 -->
+<!-- td, th는 반드시 tr 안에 작성한다 -->
+<table>
+<!-- <div>테스트</div>invalid location, table 안에 다른 데이터 쓰지 말 것, 브라우저 개발자모드 확인해보면 table 바깥쪽으로 빼버린다 -->
+
+<!-- 테이블의 이름 -->
+<caption>전화번호부</caption>
+
+<!-- thead : 테이블의 머리글, 코드가 어디있든지 최상단 행으로 고정 -->
+<thead>
+<tr>
+	<th>이름</th>
+	<th>주소</th>
+	<th>전화번호</th>
+</tr>
+</thead>
+
+<!-- tbody : 테이블의 본문 내용(행들)을 작성하는 태그 -->
+<tbody>
+<tr>
+	<td>Alice</td>
+	<td>서울시 강남구</td>
+	<td>1234567890</td>
+</tr>
+
+
+<tr>
+	<td>Alice</td>
+	<td>서울시 강남구</td>
+	<td>1234567890</td>
+</tr>
+
+<tr>
+	<td>Alice</td>
+	<td>서울시 강남구</td>
+	<td>1234567890</td>
+</tr>
+
+<tr>
+	<td>Alice</td>
+	<td>서울시 강남구</td>
+	<td>1234567890</td>
+</tr>
+</tbody>
+
+<!-- tfoot : 테이블의 바닥글, 최하단 행으로 고정 -->
+<tfoot>
+<tr> 
+	<th>NAME</th>
+	<th>ADDRESS</th>
+	<th>PHONE</th>
+</tr>
+</tfoot>
+
+</table>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

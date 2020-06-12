@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//변수 선언
+var data;
+console.log(data) // undefined 아무것도 결정되지 않았음
+
+// 선언하지 않은 변수
+// console.log(ddd); // Error : ddd is not defined
+
+console.log("-----------")
+
+//추상동등비교
+if(data == undefined){
+	console.log("data변수가 초기화되지 않았음")
+}
+
+// 이것도 출력된다
+// ecma script 6문법을 따름
+if( data == null){
+	console.log("data변수가 null 이다")
+	console.log("참조대상이 없다")
+}
+
+console.log("-----------")
+
+if(!data){
+	console.log("data의 값이 false")
+}
+// undefined의 값은 false로 인식된다
+
+if(!undefined){
+	console.log("data의 값이 false")
+}
+
+console.log("-----------")
+
+// undefined가 false라는 것은 아니다
+console.log("data==false의 결과 : ")
+console.log( data == false)
+
+console.log("-----------")
+
+// 강한 동등비교
+if( data === undefined ){
+	console.log("===연산, data변수가 초기화되지 않았음")
+}
+
+// 출력 안됨
+if(data === null){
+	console.log("===연산, data변수가 참조하고 있는 대상이 없음")
+}
+
+console.log("-----------")
+
+// ==, 기호 두개 짜리 동등비교연산, Abstract Equality
+//	명세서에 정의되어 있는 순서에 따라 비교연산을 수행
+//	데이터타입이 달라도 미교결과가 나온다(결과는 명세서 확인 필요)
+
+// ===, 기호 세 개 짜리 동등비교 연산, Strict Equality
+//	데이터타입이 같은지 먼저 검사하고 데이터타입이 같아야만 비교함
+//	데이터타입이 다르면 무조건 false
+
+console.log("-----------")
+
+// 둘다 true
+console.log( !undefined )
+console.log( !null )
+
+// ! 연산자를 이용하면 true가 반환되는 데이터
+//	false, null, undefined, NaN, 0, "", ...
+//	데이터가 없거나 null이거나 같은 상황으로 판단하는 것, 어차피 동작이 안되는 것은 마찬가지
+
+
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

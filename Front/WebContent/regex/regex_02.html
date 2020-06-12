@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	$("#uid").on("blur", function(){
+// 		console.log(" 포커스 잃음")
+	})
+	
+	$("#uid").blur(function(){
+		console.log("blur event")
+		
+		//  어떤 글자든지 8~12 개
+// 		var regEx = /.{8,12}/ // 패턴이 존재하는지만 체크
+// 		var regEx = /^.{8,12}$/ // 문장 전체가 8~12 글자인지 체크
+		
+		// 알파벳 8~12
+// 		var regEx = /^[A-Za-z]{8,12}$/
+		
+		// 알파벳 숫자 8~12
+// 		var regEx = /^[A-Za-z0-9]{8,12}$/
+// 		var regEx = /^[A-Za-z\d]{8,12}$/
+		
+		// 알파벳 숫자, -, _ 8~12
+// 		var regEx = /^[A-Za-z\d-_]{8,12}$/
+		
+		// 숫자로 시작하면 안되고, 알파벳 대소문자, 숫자로
+		//4~8글자 사이
+		var regEx = /^[A-Za-z][A-Za-z\d]{3,7}$/
+		
+		// 잘못된 정규식
+		// 이렇게 하면 첫문자에 특수문자가 포함된다
+		var regEx = /^[^0-9][A-Za-z\d]{3,7}$/
+		
+		
+		
+		if( !regEx.test($(this).val())){
+			alert("정규식 표현에 맞지 않습니다")
+		}
+		
+	})
+})
+
+</script>
+
+</head>
+<body>
+
+
+<div>
+	<input type="text" name="uid" id="uid"/>
+</div>
+
+</body>
+</html>

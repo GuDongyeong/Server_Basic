@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//Quiz. CONTENT 텍스트 밑에 ul 추가하기
+//innerHTML 사용할 것
+
+//ul 목록 태그 안의 li로 작성
+//Javascript
+//DOM
+//innerHTML
+
+window.onload = function(){
+	
+	// 풀이 1 ---------------
+	
+	content.innerHTML += "<ul id='u'></ul>"
+	
+	var u = document.getElementById("u");
+	u.innerHTML = "<li>Javascript</li>"
+	u.innerHTML += "<li>DOM</li>"
+	u.innerHTML += "<li>innerHTML</li>"
+	
+	// 풀이 2 ----------------
+	
+	var h = "";
+	h += "<ul>";
+	h += "<li>Javascript</li>"
+	h += "<li>DOM</li>"
+	h += "<li>innerHTML</li>"
+	h += "</ul>"
+	
+	document.getElementById("content2").innerHTML += h;
+	
+	// 풀이 3 ----------------
+	
+	
+	var u3 = document.createElement("ul"); // ul 생성
+	
+	var li1 = document.createElement("li"); // li 생성
+	var txt1 = document.createTextNode("Javascript"); // 텍스트 노드
+	li1.appendChild(txt1); //<li>에 텍스트 노드 추가
+
+	var li2 = document.createElement("li"); // li 생성
+	var txt2 = document.createTextNode("DOM"); // 텍스트 노드
+	li2.appendChild(txt2); //<li>에 텍스트 노드 추가
+	
+	var li3 = document.createElement("li"); // li 생성
+	var txt3 = document.createTextNode("innerHTML"); // 텍스트 노드
+	li3.appendChild(txt3); //<li>에 텍스트 노드 추가
+	
+	
+	
+	// <ul> 에 <li> 추가
+	u3.appendChild(li1);
+	u3.appendChild(li2);
+	u3.appendChild(li3);
+
+	//content3에 u3 추가
+	document.getElementById("content3").appendChild(u3);	
+	
+	// 풀이 4 -----------------
+	
+	var 
+	
+	
+};
+
+function makeLi(text){
+	var li = document.createElement("li") // li 생성
+	var txt = document.createTextNode(text); // 텍스트 노드
+	li.appendChild(txt); // ; li에 텍스트 노드 추가
+	
+	return li;
+	
+}
+</script>
+</head>
+<body>
+<div id="content">CONTENT</div>
+
+<hr>
+
+<div id="content2">CONTENT2</div>
+
+<hr>
+
+<div id="content3">CONTENT3</div>
+
+<hr>
+
+<div id="content4">CONTENT4</div>
+</body>
+</html>

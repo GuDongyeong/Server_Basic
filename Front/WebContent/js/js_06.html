@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+//NaN, Not a Number
+//	숫자로 사용하려는데 숫자가 아닐 때 반환하는 값
+
+console.log( NaN)
+console.log( typeof(NaN)) // Number
+
+console.log("-------------")
+
+//NaN인가 아닌가 판단해주느 함수
+console.log( isNaN(123)) // false
+console.log( isNaN("ABC")) // true
+console.log( isNaN("123")) // false, parseInt가 적용되면 숫자로 취급
+console.log( isNaN("123ABC")) // true, 아예 숫자형이여야 parseInt적용하여 숫자로 취급
+
+console.log("-------------")
+
+//Infinity
+//	무한대를 나타내는 키워드
+
+console.log( 123/0 ) // Infinity
+console.log( -123/0 ) // Infinity
+
+// 유한한가
+console.log( isFinite(123/0))// false
+console.log( isFinite(123)) //true
+
+console.log("-------------")
+
+var x = 123;
+if( isFinite(x)){} // x가 유한한 값일 때만 수행
+
+var y == 555;
+if( !isNaN(y)){} //y 가 숫자일때만 수행
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+.imgBox{
+	width: 320px;
+	height: 260px;
+	
+	border: 1px solid #ccc;
+	
+	/* 블락 요소의 내부정렬 */
+	text-align: center;	
+	padding: 10px;
+	
+	/* 상대 위치 지정 */
+	position: relative;
+	
+	left: 100px;
+	
+	/* 요소의 그림자 설정 속성 */
+	/* 우, 하: 양수 / 좌, 상 : 음수 / 블러 효과 / 그림자 크기 / 색상 */
+	-webkit-box-shadow: 5px 5px 10px 0px #cb7c6d; /* 브라우저의 예전 버전에서도 작동되도록 -webkit-, -moz-, -o- 등의 키워드를 붙임 */
+	box-shadow: 5px 5px 10px 0px #cb7c6d;
+	/* * box-shadow : x축이동 y축이동 흐려짐(blur) 펼치기(spread) 색상; */
+	
+	/* 요소의 모양 변형 */
+	-o-transform: rotate(5deg); /* 오페라, 버전을 고려하여 순서 지정할 것 */
+	-webkit-transform: rotate(5deg); /* 크롬, 오페라 */
+	-moz-transform: rotate(5deg); /* 파이어폭스 */
+	-ms-transform: rotate(5deg); /* 인터넷 익스플로러 */
+	transform: rotate(5deg);
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- 머리글 -->
+<header>
+<h1>SEMANTIC TAG LAYOUT</h1>
+<h3>시맨틱 태그</h3>
+</header>
+
+
+<!-- 네비게이션 -->
+<nav>
+<ul>
+	<li><a href="#">&lt;header&gt; 태그</a></li>
+	<li><a href="#">&lt;nav&gt; 태그</a></li>
+	<li><a href="#">&lt;section&gt; 태그</a></li>
+	<li><a href="#">&lt;article&gt; 태그</a></li>
+	<li><a href="#">&lt;footer&gt; 태그</a></li>
+</ul>
+</nav>
+
+<hr>
+
+<section>
+<article>
+	<p>내용물을 적는 곳! 기본 콘텐츠가 들어감</p>
+	
+	<div class="imgBox">
+		<img alt="꽃" src="../file/flower.jpg" width="300" height="200">
+		section태그 안에 article 태그로 표현하고 있음!
+	</div>
+</article>
+</section>
+
+<hr>
+
+<footer style="font-size: 0.8em; text-align: center;">
+powered by DY<br>
+&copy; DY
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	var $div = $("div");
+	
+	// width 스타일 가져오기
+	console.log($div.css("width"))
+	
+	// width 스타일 지정하기
+	$div.css("width", "500px")
+	
+	//---------------------------
+	
+	// 자바 스크립트의 객체(Object) 타입
+	// jQuery에서는 PlaneObject 라고 부른다 ( 기본 객체 타입 )
+	var obj = {
+		"key": "value",
+		"key1": 123,
+		"key2": true,
+		"key3": null		
+	}
+	
+	// 한번에 여러 개의 스타일 지정하기
+	$div.css({
+		"width": "400px",
+		"height": "300px",
+		"border-color": "blue",
+		"display": "inline-block"		
+	})
+	
+	//---------------------------
+	
+	// 여러 개의 스타일 값을 객체(Object)로 가져오기
+	// 객체와 연결되어 있는 것은 아니다. 객체의 값을 바꾸어도 반영되지 않음
+	var info = $div.css(["width", "height", "display"])
+	console.log(info)
+	
+	console.log("--- info.width ---")
+	console.log(info.width)
+	
+	info.width = "800px";
+	info.height = "500px"
+	
+	console.log(info)
+	
+	$div.css(info)
+
+	//------------------------------
+	
+	// css()는 인라인으로 적용되고 인라인으로 !important 를 주어도 css()값으로 아예 대체된다
+	
+	// 임베디드 방식으로 !important를 주면 그때는 임베디드 방식이 반영된다
+	$div.css("color", "blue")
+	
+})
+
+
+</script>
+<style type="text/css">
+/* 임베디드 방식 스타일 적용 */
+div{
+	color: red !important;
+}
+
+</style>
+</head>
+<body>
+
+<div style="width: 300px !important; height: 200px; border: 1px solid red;">
+	<p>하나</p>
+	<p>둘</p>
+	<p>셋</p>
+</div>
+
+</body>
+</html>

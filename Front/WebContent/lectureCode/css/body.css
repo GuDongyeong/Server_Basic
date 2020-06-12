@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+/* 태그 선택자 (body태그 선택) */
+body{
+	color: tomato;
+	font-size: 40px;
+}

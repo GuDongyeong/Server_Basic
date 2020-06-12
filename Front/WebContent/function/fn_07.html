@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+//전역함수
+function hello() {
+	console.log("Hello")
+}
+
+hello();
+
+//-----------------------------
+
+//1000밀리초(1초)마다 hello 함수 호출하기(콜백)
+// 타이머 함수
+var tid = setInterval(hello, 1000);
+console.log(tid)
+//------------------------------
+
+//3000밀리초(3초) 이후에 alert 호출
+console.log(setTimeout(function() {
+	alert("HIHI");}, 3000)
+	)
+//----------------------------------
+
+function stop() {
+	clearInterval(tid);
+}
+
+//5000밀리초 뒤에 tid 타이머를 종료시킨다
+setTimeout(stop, 5000);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+#one{ color: blue; }
+
+#two{ color: #ccc; }
+
+#three{ 
+	border: 1px solid tomato;
+	color: red;
+}
+
+</style>
+</head>
+<body>
+
+<h1>ID 선택자</h1>
+<hr>
+
+<p id="one">p 태그</p>
+
+<span id="two">span 태그</span>
+
+<div id="three">
+	div 태그
+	<p id="two">div 내부의 p 태그</p><!-- 여러 태그에 같은 id, 되긴하지만 이렇게 쓰면 안된다 -->
+	안녕
+</div>
+
+</body>
+</html>

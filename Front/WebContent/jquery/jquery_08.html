@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	// #myDiv 의 첫번쨰 자식으로 <h1> 태그 생성
+	$("#myDiv").prepend($("<h1>").text("PREPEND 테스트"))
+	
+	// #myDiv 의 자식요소 두 개
+	// $("#myDiv").children() - <h1>, <ul>
+	//	-> children 에 selector를 지정해주어야 한다
+	$("<li>").text("영").prependTo($("#myDiv").children("ul"))
+	
+	//before. 이전 형제
+	// #myDiv  요소의 이전 형제로 <p> 생성
+	$("#myDiv").before($("<p>").text("jQuery 어렵다..."))
+	
+	// #myDiv 요소의 다음 형제로 <p> 생성
+	$("#myDiv").after($("<p>").text("엉엉...."))
+	
+});
+</script>
+</head>
+<body>
+
+
+<div id="myDiv">
+<ul>
+	<li>하나</li>
+	<li>둘</li>
+	<li id="third">셋</li>
+	<li>넷</li>
+	<li>다섯</li>
+</ul>
+</div>
+
+</body>
+</html>

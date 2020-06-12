@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+function hello(){
+	console.log("안녕하세요")
+}
+
+function thanks(){
+	console.log("감사해요")
+}
+
+//-----------------------------
+
+function action( fn ){
+	fn();
+	return fn;
+}
+
+// action(123) // Error : fn is not a function at action
+
+action(hello); // 참조 주소 == 함수 이름
+
+action(thanks)
+
+console.log("-----------------------")
+
+var f = action(hello);
+
+f();
+
+console.log("-----------------------")
+
+action(thanks)();
+
+action(action(action(action(hello))))()
+
+
+
+
+</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

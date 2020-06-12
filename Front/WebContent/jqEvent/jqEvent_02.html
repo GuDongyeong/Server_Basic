@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+function sayHi(){ alert("hi")}
+function red(){ $(this).css("color", "red")}
+var blue = function(){
+	$(this).css("color", "blue")
+}
+$(document).ready(function(){
+
+	// {} 객체로 한 번에 다양한 이벤트 리스너 등록하기
+	$("#btnOk").on({
+		"click": sayHi,
+		"mouseenter": red,
+		"mouseleave": blue
+	})
+	
+	//-----------------------------------------------
+	
+	// one() 함수로 딱 한번 동작하도록 이벤트 리스너 등록하기
+	$("#btnAlert").one({
+		"click": sayHi,
+		"mouseenter": red,
+		"mouseleave": blue
+	})
+	
+	//-----------------------------------------------
+
+	// 모든 버튼들의 click이벤트리스너 제거
+	$("button").off("click")
+	
+	//----------------------------------------------
+	
+	// click 이벤트 다시 ㄷ등록
+	$("#btnAlert").on("click", sayHi)
+	
+})
+
+
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<button id="btnOk">확인</button>
+	<button id="btnAlert">알림</button>
+</div>
+
+
+</body>
+</html>

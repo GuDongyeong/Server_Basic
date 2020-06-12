@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- jQuery 2.2.4 min 설치 -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript">
+
+/* jQuery 스타일로 DOM 사용하기 */
+$(document).ready(function(){
+	
+	var jQueryP1 = $("#p1"); // jQuery
+	var jsP1 = document.getElementById("p1"); // js
+// 	var jsP1 = p1; // 축약코드
+	
+	console.log("--- jQuery ---")
+	console.log(jQueryP1) // n.fn.init 배열로 반환
+	
+	console.log("--- JS ---")
+	console.log(jsP1)
+	
+	//---------------------------------
+	
+	// 순수 js DOM 객체를 이용한 스타일(CSS) 지정
+	jsP1.style.color="red";
+	
+	//jQuery DOM 객체를 이용한 스타일(CSS) 지정
+	jQueryP1.css("border", "1px solid #ccc")
+
+	//---------------------------------
+
+	console.log(jQueryP1.style) //undefined
+
+	// jQuery DOM 객체에 순수 JS 구문을 적용하기 - Error
+// 	jQueryP1.style.background = "tomato";
+	
+// 	jsP1.css("background", "tomato")
+	
+	//---------------------------------
+
+	console.log("--- $('p') ---")
+	console.log($('p')) // p태그를 배열로 반환, n.fn.init(3)
+	
+	// 요소가 여러 개여도  css()함수는 한번에 적용
+	$('p').css("background", "yellow")
+
+	//---------------------------------
+
+	// 변수 이름에 $를 붙이면 jQuery DOM  객체
+	var p3 = document.getElementById("p3") // JS DOM 객체
+	var $p3 = $("#p3") // jQuery DOM 객체
+	
+	console.log("--- JS ---")
+	console.log(p3)
+	
+	console.log("--- jQuery ---")
+	console.log($p3)
+	
+	//---------------------------------
+
+	// .css()함수 사용하면 CSS 속성이 태그의 인라인 속성으로 적용된다 -> style=" 속성"
+	$(".p2").css("background-color", "gray")
+	
+	$("p:last-child").css("color", "orange")
+	
+	//---------------------------------
+
+	console.log("--- JS ---")
+	console.log(p3)// 변수 p3
+	
+	var $p3Dom = $(p3) // JS DOM -> jQuery DOM 변환
+	console.log("--- jQuery ---")
+	console.log( $p3Dom )
+	
+	
+})
+
+
+
+
+</script>
+</head>
+<body>
+
+<div>
+	<p id="p1">하이</p>
+	<p class="p2">Hello</p>
+	<p id="p3">Welcome</p>
+</div>
+
+</body>
+</html>

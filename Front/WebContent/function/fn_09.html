@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+//Quiz. 현재 시 분 초 를 1초마다 출력
+//	console 출력
+
+// // 방법 1
+// function now() {
+// 	var d = new Date(); // 현재 시간 객체
+// 	console.log(d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds())
+// }
+
+// setInterval(now, 1000);
+
+//-------------------------------
+
+// 방법 2
+// setInterval( function() {
+// 	var d = new Date();
+	
+// 	//날짜만 출력하는 메소드 - toDateString()
+// 	console.log(d.toDateString()); // 요일 월 일 년
+	
+// 	// 시간말 출력하는 메소드 - toTimeString()
+// 	console.log(d.toTimeString());
+// }, 1000);
+
+//----------------------------------
+
+// 방법 3
+
+ setInterval( function() {
+	var d = new Date();
+	
+	// innerHTML 여는 태그 닫는 태그 사이에 추가함을 의미
+	time.innerHTML = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+	
+	time.innerHTML += "<br>" + d.getHours() + "시" + d.getMinutes() + "분" + d.getSeconds() + "초";
+	
+}, 1000);
+
+
+</script>
+</head>
+<body>
+
+<div id="time"></div>
+
+</body>
+</html>

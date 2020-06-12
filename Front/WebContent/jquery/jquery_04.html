@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	var $p = $("p")
+	console.log($p)
+	
+	// 여러 개 선택된 jQuery DOM 객체에 css() 이용하면 모두 적용됨
+	$p.css("border", '1px solid #ccc')
+	
+	//--------------------
+	
+	// jQuery 객체 반환하기
+	console.log("--- $p.eq(1) ---")
+	console.log($p.eq(1))
+	
+	//JS 객체 반환하기
+	console.log("--- $p.get(1) ---")
+	console.log($p.get(1))
+	
+	// JS 객체 반환하기
+	console.log("--- $p[2] ---")
+	console.log($p[2])
+	
+	console.log("-----------")
+	
+	// JS DOM 객체 배열로 반환됨
+	var p = document.getElementsByTagName("p");
+	console.log(p)
+	
+	p[0].style.color = "red"; // js 객체에 스타일 적용하기
+	
+	var $p1 = $(p[1]) // js 객체 -> jquery 객체 변환
+	$p1.css("color", "tomato"); // jQuery 객체에 스타일 적용하기
+	
+	console.log("---------")
+	
+	for(var i=0;i<$("p").length;i++){
+		$("p").eq(i).css("background", "gray")
+	}
+	
+	console.log("---------")
+
+	$("p").each(function(i, e){
+// 		console.log("확인")
+		
+		console.log("-- " + i + " --")
+		console.log(e) // JS DOM 으로 반환
+		
+		console.log($(e)); // js DOM -> jquery DOM
+	})
+	
+	console.log("---------")
+
+	$("p").each(function(i, e){
+		console.log("-- " + i + " ---")
+		console.log(e)
+		
+		console.log(this)// this, 함수를 호출해준 객체
+		// each는 앞의 jQuery DOM 객체를 이용하여 함수를 호출한다
+		// 따라서 콜백함수의 두번째 인자 e를 참조
+		
+		// 기본적으로 콜백함수에서 사용된 this 키워드는 해당함수를 호출한 객체를 지칭한다
+		
+		console.log($(this)) // 두번쨰 인자 e-> jQuery 객체 변환
+		
+		$("p").each(function(){
+			$(this).css("font-style", "italic")
+		})
+		
+		
+		
+	})
+
+
+
+});
+
+
+</script>
+
+</head>
+<body>
+
+<div>
+	<span>하나</span>
+	<p>둘</p>
+	<pre>셋</pre>
+	<p>넷</p>
+	<p>다섯</p>	
+</div>
+
+</body>
+</html>

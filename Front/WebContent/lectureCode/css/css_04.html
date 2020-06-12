@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+/* 태그 선택자(div요소들을 전부 선택한다) */
+div{
+	/* 요소의 너비 */
+	width: 100px;
+
+	/* 요소의 높이 */
+	height: 100px;
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<h1>CSS 색상</h1>
+<h3>ColorName, RGB, RGBA, HEX, HSL, HSLA</h3>
+<hr>
+
+<!-- background-color : 배경색 지정 -->
+<div style="background-color: blue;">테스트</div>
+<hr>
+
+<!-- rgb 표현법 -->
+<div style="background-color: rgb(0,255,0);">Green</div>
+<div style="background-color: rgb(255, 0, 0);">Red</div>
+<div style="background-color: rgb(100%, 100%, 0%);">Yellow</div>
+
+<!-- RGBA -->
+<div style="background-color: rgb(255, 0, 255, 1.0);">Magenta</div>
+<div style="background-color: rgb(255, 0, 255, 0.3);"></div>
+<div style="background-color: rgba(147, 112, 219, 1);"></div>
+<!-- rgba로 시작해도 되고 rgb로 시작해도 된다, 둘 다 alpha 적용됨 -->
+
+<hr>
+
+<div style="background-color: #0066FF;"></div>
+<div style="background-color: #ccc;">#ccc</div>
+<div style="background-color: #333;">#333</div>
+<div style="background-color: #666;">#666</div>
+<div style="background-color: #1F55B6;">#1F55B6</div>
+
+<hr>
+
+<p style="color: hsl(0, 100%, 50%)">안녕하세요!</p>
+<p style="color: hsl(120, 100%, 50%)">안녕하세요!</p>
+<p style="color: hsl(240, 100%, 50%)">안녕하세요!</p>
+<p style="color: hsl(360, 100%, 50%)">안녕하세요!</p>
+<hr>
+
+<p style="color: hsl(30, 100%, 50%)">안녕하세요!</p>
+<p style="color: hsl(156, 52%, 50%)">안녕하세요!</p>
+<p style="color: hsl(267, 100%, 50%)">안녕하세요!</p>
+
+<hr>
+
+<p style="color: hsl(120, 0%, 50%)">안녕하세요!</p>
+<p style="color: hsl(120, 50%, 50%)">안녕하세요!</p>
+<p style="color: hsl(120, 100%, 50%)">안녕하세요!</p>
+<hr>
+
+<p style="color: hsl(240, 100%, 0%)">안녕하세요!</p>
+<p style="color: hsl(240, 100%, 20%)">안녕하세요!</p>
+<p style="color: hsl(240, 100%, 40%)">안녕하세요!</p>
+<p style="color: hsl(240, 100%, 60%)">안녕하세요!</p>
+<p style="color: hsl(240, 100%, 80%)">안녕하세요!</p>
+<p style="color: hsl(240, 100%, 100%)">안녕하세요!</p>
+
+<hr>
+
+<p style="color: hsl(240, 100%, 50%, 0.4)">안녕하세요!</p>
+
+</body>
+</html>

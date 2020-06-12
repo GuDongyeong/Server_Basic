@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+/* 개수가 변해도 너비에 딱 맞게 자동으로 변경하는 법 */
+
+#wrap{
+/* 	text-align: center; */
+	
+/* 	width: 980px; */
+	width: 80%;
+	
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	
+	/* <table>처럼 레이아웃 설정됨 */
+	display: table;
+	
+	/* 내용물(table-cell)의 크기가 일정하도록 설정 */
+	table-layout: fixed;
+}
+
+#wrap div{
+/* 	width: 14.28%; */
+	height: 140px;
+	
+	/* 테이블의 내용물(table-cell, td, th)처럼 레이아웃 설정 */
+	display: table-cell;
+	
+	/* 수직정렬, table-cell(기본적으로 사용)과 inline-block에는 가능, block에는 불가능 */
+	vertical-align: middle;
+	
+	/* 내부정렬 가운데 */
+	text-align: center;
+	
+
+}
+
+
+#wrap > div:nth-child(1){ background-color: #8CFFF6; }
+#wrap > div:nth-child(2){ background-color: #67CAEB; }
+#wrap > div:nth-child(3){ background-color: #69AAFF; }
+#wrap > div:nth-child(4){ background-color: #7582EB; }
+#wrap > div:nth-child(5){ background-color: #AB94FF; }
+#wrap > div:nth-child(6){ background-color: #AB75EB; }
+#wrap > div:nth-child(7){ background-color: #FFAEC9; }
+
+</style>
+
+
+</head>
+<body>
+
+<div id="wrap">
+	<div>A</div><div>B</div><div>C</div><div>D</div><div>E</div><div>F</div><div>G</div>
+</div>
+</body>
+</html>

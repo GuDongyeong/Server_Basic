@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+
+/* 전체 선택자 */
+*{
+	/* 모든 태그에 기본 설정을 넣을 때 사용하는 선택자 */
+	/* 브라우저가 자동으로 넣어주는 CSS를 없앨 때 사용한다 */
+	/* 해당 문서에서 사용할 기본 폰트 스타일을 적용할 떄도 사용한다 */
+	padding: 0px;/* 내부여백 없애기 */
+	margin: 0px;/* 외부 여백 없애기 */
+}
+
+/* 태그 선택자 */
+p{
+	/* 내부 여백 */	
+	padding: 10px;
+
+	/* 외부 여백 : 상 좌우 하 */
+	margin: 5px 20px 30px;
+	
+	/* 이미지로 배경 지정하기 */
+	background-image: url(../file/rainbow.JPG);
+	
+	/* 배경 지정(색상만 지정하면 background-color 가 된다) */
+	background: tomato;
+	
+	
+	/* 글자 색상 */
+	color: #ccc;
+
+}
+
+body{
+	background-image: url(../file/rainbow.JPG);
+	background-size: 200px 100px;
+	/* 크기 단위로 지정하기 - 배겨 ㅇ이미지의 너비, 높이 값을 지정한다 */
+	/* contain: 배경 이미지의 너비를 요소의 너비로 맞춤(높이는 비율로) */
+	/* cover : 배경 이미지의 높이를 요소의 노이로 맞춤(너비는 비율로) */
+	
+	/* 배경 이미지 반복 패턴 설정 */
+	background-repeat: repeat-x;
+	/* repeat(기본값) : x축(좌우) y축(상하) 모두 반복 */
+	/* no-repeat : 반복하지 않음 */
+	/* repeat-x : x축만 반복 */
+	/* repeat-y : y축만 반복 */		
+
+}
+
+/* span 태그 선택자 */
+span{
+	/* inline 요소는 상하 margin이 반영되지 않는다 */
+/* 	margin: 30px; */
+	margin: 0 30px;
+	
+	/* inline 요소는 width(너비), height(높이) 둘 다 반영되지 않는다 */
+	width: 100px;
+	height: 100px;
+	
+	/* inline 요소는 block 안에 들어가는 내용물(요소)이기 때문에 여백을 차지하지 않는다 */
+}
+
+/* div 태그 선택자 */
+div{
+	border: 3px dotted black;
+	
+	margin: 5px 20px 30px;
+	
+	background-color: #ccc;
+	
+	color: #fff;
+	
+	/* p태그는 자신의 스타일 반영한 후 부모의 스타일 반영 */
+
+
+}
+
+
+</style>
+
+
+
+
+</head>
+<body>
+
+<h1>선택자</h1>
+<hr>
+
+<p>p 태그</p>
+
+<span>span 태그</span>
+
+<div>
+	div 태그
+	<p>div 내부의 p 태그</p>
+	안녕
+</div>
+
+
+
+</body>
+</html>

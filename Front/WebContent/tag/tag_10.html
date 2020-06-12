@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+table, th, td{
+	border: 1px solid #ccc;
+	border-collapse: collapse;
+}
+</style>
+</head>
+<body>
+
+<h1>테이블 태그3</h1>
+<h3>rowspan, colspan</h3>
+<hr>
+
+<table>
+
+<tr>
+	<td>1x1 셀</td>
+	<td>1x2 셀</td>
+	<td rowspan="2">1x3 셀</td>
+</tr>
+
+<tr>
+	<td>2x1 셀</td>
+	<td>2x2 셀</td>
+	<td rowspan="2">2x3 셀</td><!-- 1x3 때문에 옆으로 밀림 -->
+</tr>
+
+<tr>
+	<td colspan="">3x1 셀</td>
+</tr>
+
+<tr>
+	<td colspan="4">4x1 셀</td>
+</tr>
+
+
+
+
+</table>
+
+
+</body>
+</html>

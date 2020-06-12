@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	// jQuery 스타일로 이벤트 리스너 등록하기
+	$("#myform").on("submit", function(){})
+	$("#myform").submit(function(){})
+	
+	// JS 스타일로 이벤트 리스너 등록하기
+	myform.onsubmit = function(){	}
+	myform.addEventListener("submit", function(){})
+	//------------------------------------------
+	
+	$("#myform").submit(function(){
+		console.log("submit 이벤트 발생")
+		
+		// 이벤트 동작을 중단시키는 코드 - submit이 수행되지 않음
+// 		return false;
+		
+		// 이벤트 동작을 정상적으로 보내느 코드 - submit 수행
+// 		return true;
+		
+		//----------------------------------------
+		
+		// #uid 검증(Validation)
+		var uidReg =  /^[A-Z][A-Za-z0-9]{5,}$/
+		if( !uidReg.test($("#uid").val())){
+			alert("아이디 잘 입력하세요")
+			
+			$("#uid").val("")
+			$("#uid").focus();
+			
+			return false; // submit 중단시키기
+		}
+
+		// #upw 검증(Validation)
+		var upwReg =  /^[A-Z][A-Za-z0-9]{5,}$/
+		if( !upwReg.test($("#upw").val())){
+			alert("비밀번호 잘 입력하세요")
+			
+			$("#upw").val("")
+			$("#upw").focus();
+			
+			return false; // submit 중단시키기
+		}
+		
+		// #upw_chk 검증(Validation)
+		if( $("#upw_chk").val() != ($("#upw").val())){
+			alert("비밀번호가 다르네요")
+			
+			// 다지우고 비밀번호 다시 입력
+			
+// 			$("#upw_chk").val("")
+// 			$("#upw").val("");
+// 			$("#upw").focus();
+			
+			//------------------------
+			
+			// 비밀번호 확인 창에 select  이벤트 발생시키기
+			// -> 내용을 선택한 채로 focus 넘어감
+			$("#upw_chk").select();
+			
+			return false; // submit 중단시키기
+		}
+		
+		
+	});
+	
+	// btnComment를 누르면 comment가 보여지게 만들기
+	$("#btnComment").click(function(){
+		
+		// JS 방법으로 처리하기
+// 		comment.style.display = "inline-block";
+		
+		// jQuery 방법으로 처리하기
+// 		$("#comment").show();// 보여지게
+// 		$("#comment").hide();// 숨기기
+
+		$("#comment").toggle();// 바뀌기
+
+	
+		
+	})
+	
+});
+
+
+
+</script>
+
+</head>
+<body>
+
+<form id="myform" action="#" method="post">
+
+아이디 <input type="text" name="uid" id="uid"/><br>
+비밀번호 <input type="text" name="upw" id="upw"/><br>
+비밀번호 확인 <input type="text" name="upw_chk" id="upw_chk"/><br>
+
+<input type="submit" value="전송"/>
+
+</form>
+
+<hr>
+
+<button id="btnComment">자기소개</button><br><br>
+<textarea rows="5" cols="50" id="comment" style="display: none;"></textarea>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+// 스코프, Scope
+//	변수의 유효범위
+
+// console.log(data); //Error : data is not defined , 선언되지 않은 변수
+
+console.log(num);// 에러나지 않음, undefined, 변수가 선언된 상태
+// 컴퓨터는 전체 코드를 읽고 변수 선언, 함수 정의 코드를 미리 수행한다
+//	-> 저장공간을 미리 확보
+//	그 후에 다시 한줄씩 읽으며 수행
+
+// 호이스팅(Hoisting), 끌어올리기(변수 선언, 함수 정의 코드를)
+//	전역 스코프에서 발생
+//	지역 스코프의 변수나 함수는 해당 지역 안에서만 호이스팅
+
+
+// 글로벌(Global) 스코프, 전역 스코프
+var num = 10; // 전역 변수, Global Variable
+console.log(num);
+// 최대한 사용하지 말것, 어느 함수나 접근가능하기 때문에 동기화처리가 필요
+//	혹은 const로 상수화해서 사용..
+
+//----------------------------------------------
+
+function func(){
+	console.log(num); // 전역 변수 출력 가능
+	
+	// 호이스팅
+	console.log(func_var) // undefined
+	
+	var func_var = 20; // 지역변수, Local Variable
+	
+	console.log(func_var) //지역 변수 출력
+}
+
+func();
+
+// console.log(func_var) // Error : func_var is not defined, func() 함수를 벗어나서 사용 불가
+
+//------------------------------------------------
+
+//{ } 블록
+{
+	// 블록 지역 스코프
+	var block_var = 30;
+	
+	console.log(block_var)
+}
+
+console.log(block_var); // 출력됨, var변수는 블록지역스코프 무시
+
+//------------------------------------------------
+
+var data1 = "Alice"
+console.log(data1)
+
+var data1 = "Bob"
+console.log(data1)
+
+// var로 변수를 선언하면 이전에 선언되었던 이름이어도 사용할 수 있다
+// 에러 안남, 이전에 생성된 변수를 가져와서 사용한다
+
+//------------------------------------------------
+
+// 호이스팅되지만 접근할 수 없도록 막아둠
+// console.log(data2) // Cannot access 'data2' before initialization
+// let변수는 초기화 전에는 접근 불가
+// console.log(data2)
+
+
+let data2 = "Clare"
+console.log(data2);
+
+// let data2 = "Dave" // Error : Identifier 'data2' has already been declared
+// let은 변수 이름 중복 선언 불가
+
+data2 = "Dave"
+console.log(data2)
+
+//------------------------------------------------
+
+// { } 블록
+{
+	//블록 지역 스코프
+	let block_let = 40;
+	console.log(block_let)
+}
+// console.log(block_let) // let 변수는 블록 지역 스코프 밖에서 사용 불가
+
+//------------------------------------------------
+
+for( var i; i<5; i++){
+}
+
+console.log(i) //출력됨, var변수는 function스코프 제한
+
+// for(let j;j<5;j++){}
+// console.log(j)// Error :j is not defined, let 변수는 block스코프 제한
+
+//Global > Block > function
+
+//------------------------------------------------
+
+// const : 상수 생성 키워드
+// const data3; // Error : Missing initializer in const declaration
+// 선언과 동시에 초기화 필수!
+
+const data3 = 50;
+console.log(data3);
+
+data3 = 60; // Error Assignment to constant variable
+//const 변수는 상수!(값 대입 불가)
+
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

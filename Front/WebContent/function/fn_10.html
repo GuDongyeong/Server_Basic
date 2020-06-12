@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var cnt = 0; // 전역변수
+
+function countUp(){
+	return ++cnt;
+}
+
+console.log(countUp());
+console.log(countUp());
+console.log(countUp());
+console.log(countUp());
+console.log(countUp());
+// -> 수 늘어남, 전역변수!
+
+console.log("------------------")
+
+function countUp2() {
+	var cnt2 = 0; // 함수스코프 지역변수
+	
+	return ++cnt2;
+}
+
+console.log(countUp2());
+console.log(countUp2());
+console.log(countUp2());
+console.log(countUp2());
+console.log(countUp2());
+// -> 모두 1
+// -> 함수는 호출되고 나서 메모리에서 사라지고 호출되면 다시 처음부터
+// 함수 내의 지역 변수도 삭제됨
+
+console.log("------------------")
+// 그럼 이 상황에서는?
+
+function countUp3() {
+	var cnt3 = 0; // -> countUp3의 Local Variable, closure상황에서는 free Variable(자유변수)
+	
+	return function() { // -> 이 함수가 클로저
+		return ++cnt3;
+	}
+}
+
+var f = countUp3(); //함수스코프(function({return ++cnt3})를 f가 잡고 있기 때문에 전체 외부 함수가 지워지지 않고 남아있음)
+// closure 상황
+//	함수 호출관계에 따라서 함수 스코프 영역이 유지되는 상태
+//	접근할 수 있는 요소는 연결된 변수 f 뿐
+
+
+console.log(f());
+console.log(f());
+console.log(f());
+console.log(f());
+console.log(f());
+// 1씩 증가! 외그러냐? - closure 때믄
+
+f = null; // 참조대상을 없애기, 스코프(closure공간) 제거
+
+console.log(f()); // Error, f is not a function
+
+// 클로저, Closure
+//	함수 스코프의 외부로 반환된 내부함수가 자신이 선언(정의)되었을 때의 스코프(상태, 환경)를 기억하는 것
+//																		-> lexical scope(선언되었을 때의 스코프)
+
+//	함수 스코프가 종료되었더라도 클로저 함수를 호출하면 클로저 함수가 선언되었을 때 만들어진 스코프에 접근할 수 있다
+
+//	클로저 함수에 의해 접근할 수 있는 변수를 자유변수(free Variable)이라고 한다
+
+//	자유변수는 새롭게 만들어진 것이 아니라 최초의 변수공간을 계속 사용하는 것이므로 값의 변화가 적용되고, 최신값으로 유지된다
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

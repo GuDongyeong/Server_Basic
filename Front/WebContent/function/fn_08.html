@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+// Mozilla 문서 참조 built-in object
+
+// 날짜 객체, Date
+
+var d1 = new Date(); //현재 시간
+console.log(d1);
+
+//하루 -> 1970년 1월 2일 00시
+// 1d == 24h == 24*60m == 24*60*60s == 24*60*60*1000ms == 86400000ms
+var d2 = new Date(86400000);
+// 생성자 매개변수로 밀리초.. 넣어주면 기준시에서 n밀리초 이후의 시간을 반환
+console.log(d2);
+
+//-----------------------------------------
+
+var d3 = new Date("2015/07/07 15:26:34");
+console.log(d3);
+
+//----------------------------------------
+
+var d4 = new Date(2011, 4, 5, 10, 11, 12);//월만 0부터 시작 4 -> 5월
+console.log(d4);
+
+//------------------------------------------
+
+// Date.now() 메소드
+//	현재 시간까지 밀리초로 표현(유닉스 타임스탬프 기준)
+console.log(Date.now())
+
+var d5 = new Date(Date.now());
+console.log(d5)
+
+//-----------------------------------------
+
+//Date객체를 이용한 함수들
+//	주로 날짜나 시간을 파싱(추출)하는 함수들
+
+var d = new Date(); // 현재 시간
+
+console.log("--------------")
+console.log(d.getFullYear())//년도
+console.log(d.getMonth())// 월(0부터 시작)
+console.log(d.getDate()) //일
+console.log(d.getDay()) //요일( 일요일 == 0, 토요일 == 6)
+console.log(d.getHours()) // 시
+console.log(d.getMinutes()) // 분
+console.log(d.getSeconds()) // 초
+console.log(d.getMilliseconds()) // 밀리초
+
+console.log("---------------")
+
+// get 대신 set을 사용하면 Date객체의 날짜/시간을 변경할 수 있다
+
+d.setFullYear(2050);
+d.setMonth(0);
+d.setDate(27);
+// setDay는 없다, 자동계산됨
+console.log(d);
+
+console.log("---------------")
+
+var customDate = new Date(); // 현재시간
+
+// 임의의 시간으로 설정, 유닉스 타임스탬프 이용, setTime
+customDate.setTime(1500000000000);
+
+console.log(customDate);
+
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

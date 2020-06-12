@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+div{
+	width: 200px;
+	height: 100px;
+}
+
+#div1{ border: 1px solid red; }
+#div2{ border: 1px solid green; }
+#div3{ border: 1px solid blue; }
+
+#div1{ float: left; }
+/* div2 레이아웃은 배치가 되고 내용물은 div1이 차지하고 있어서 밑으로 밀려남 */
+
+#div2{ float: right; }
+
+/* #div3{ clear: both; } */
+/* 보통 밑에처럼 사용 */
+.clearbox{
+	clear: both;
+	
+	width: 0;
+	height: 0;
+}
+
+/* **********************************************************************8 */
+
+#div3{ float: left; }
+
+#pdiv{
+	/* 플로팅된 #div를 감싸주지 못한다 */
+	border: 1px solid black;
+	
+	/* div 설정 제거 */
+	width: auto;
+	height: auto;
+}
+
+.clearfix::after{
+	content: "";
+	
+	clear: both;
+	display: table;/* 높이 너비가 0이다 */
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div id="div1">DIV1 요소</div>
+
+<div id="div2">DIV2 요소</div>
+
+<div class="clearbox"></div>
+
+<div id="pdiv" class="clearfix">
+	<div id="div3">DIV3 요소</div>
+
+	<p>못하다 있는 피어나기 것이다. 용기가 하는 기관과 두기 내는 창공에 듣는다. 군영과 돋고, 것이 피가 쓸쓸하랴? 그러므로 이는 타오르고 있을 웅대한 가슴에 운다.</p>
+</div>
+</body>
+</html>

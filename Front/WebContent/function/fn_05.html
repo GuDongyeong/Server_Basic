@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var num = 111; // 전역변수
+
+//전역변수를 이용한 연산
+function fn1() {
+	num += 11;
+}
+
+function fn2() {
+	console.log(num)
+}
+
+// 함수 호출 코드
+fn2();
+fn1();
+fn2();
+
+//--------------------------------
+
+function hello() {
+	
+	//호이스팅 - 스코프가 적용된다, 함수 내에서 호이스팅이 따로 발생한다
+	console.log(num); // undefined 
+	
+	var num = 222; // 지역 변수
+	
+	console.log("안녕" + num) //지역변수를 사용
+	
+	
+	function inner() {
+		
+		//내부함수 내에서 호이스팅
+		console.log(num) //undefined
+		
+		var num = 333; // 내부함수의 지역변수
+		
+		console.log("반가워요!" + num)
+	}
+	
+	inner(); // 내부함수는 정의된 스코프 내에서만 호출 가능
+} // function 스코프
+
+hello();
+
+// inner(); //Error, inner함수가 정의된 function scope를 벗어났기 때문에
+</script>
+</head>
+<body>
+
+</body>
+</html>

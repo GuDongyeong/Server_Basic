@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* span 태그 앞 쪽에 가상 요소 추가 */
+span::before{
+	/* 가상 요소에 쓰여질 대용 */
+	content: "\Aspan before";
+	/* 개행은 아스키코드 \A로 표현 */
+
+	color: orange;
+	background-color: gray;
+
+}
+
+.test{
+
+	/* 요소가 공백문자(띄어쓰기, 개행문자)를 처리하는 방식을 지정 */
+	white-space: no-wrap;
+	/* 띄어쓰기, 개행 모두 띄어쓰기 하나로 바꿈, 자동줄바꿈 가능 */
+	
+/* 	white-space: pre; */
+	/* 공백 여러개는 적용, 줄 바꿈도 적용, 자동 줄바꿈은 x */
+
+/* 	white-space: pre-line; */
+	/* 공백x, 개행은 적용, 자동 줄바꿈 적용 */
+	
+/* 	white-space: pre-wrap; */
+	/* 공백, 개행, 자동줄바꿈 모두 적용 */
+
+}
+
+/* ****************************************************************** */
+
+
+p::first-line{
+	color: blue;
+}
+/* .new::after 요소도 바뀐다 우선순위를 고려할 것 */
+/*  화면이 줄어서 줄이 바뀌면 검은색됨, 현재 상황을 반영*/
+
+.new::after{
+	content: "new";
+	
+	font-size: 10px;
+	background-color: #f66;
+	color: #fff;
+	padding: 0 2px;
+	
+	border-radius: 3px;
+	/* radius: 반지름, 테두리의 모서리를 둥글게 만드는 속성 */
+
+}
+/* 가상요소들 실제 레이아웃에는 영향을 끼치지 않으면서 삽입할 수 있기 때문에 꽤 많이 쓰인다 */
+
+
+p::first-letter{
+	color: red;
+	font-size: 20px;
+}
+
+p:not(.new){
+	background-color: #eee;
+}
+
+
+
+
+</style>
+
+</head>
+<body>
+
+<p class="new">첫 번째</p>
+
+<span>두 번째</span>
+
+<div class="new">세 번째(div)</div>
+
+<p class="test">네 번째(p). This is a p Tag. This is a p Tag. This is a p Tag.
+풍부하게 이상, 가는 않는 살았으며, 행복스럽고 아니한 인류의 못하다 때문이다.<br>
+이 얼마나 아니한 못할     미인을 크고 이상은 것이다.
+
+
+
+
+
+
+
+<br>
+그림자는 우리의 속에서 가슴이 눈에 피는 사막이다.<br>
+거선의 간에 심장은 되는 이성은<br>
+석가는 희망의 인류의 있으랴?</p>
+
+</body>
+</html>

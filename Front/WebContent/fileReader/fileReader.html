@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	
+	$("#upload").change(function(e){
+		console.log("파일 선택됨, change")
+		
+		console.log(e)// e, 이벤트 객체, property로 target 가지고 있음
+		// target 이벤트가 발생한 대상 객체, this
+		console.log(e.target) //JS 객체
+		// target.files이 file 객체의 filelist(배열)를 가지고 있음, name, size, type
+		// 그러나 파일의 정보만 알고 있을 뿐 파일의 내용을 담고 있지는 않다
+		
+		// 선택한 파일들 변수
+		var files = e.target.files // FileList 객체
+		console.log(files)
+		console.log(files[0])
+		
+		// file 객체에는 파일의 정보가 들어있긴 하지만 해당 파일의 내용물(컨텐츠) 정보는 없다
+		// -> FileReader 객체를 이용해 파일 내용을 읽어들어야 한다
+		
+		console.log("------")
+		
+		// FileReader 객체 생성
+		var reader = new FileReader();
+		
+		//File 객체의 정보(내용물)을 모두 읽어서 메모리에 적재(load)한 이후 동작되도록 이벤트리스너 작성
+		// 코드 순서 주의! onload 예약 거는 부분이 위에 있어야 한다 밑에 있으면 file을 예약 코드보다 먼저 다 읽었을 경우 예약 코드가 실행되지 않으므로
+		reader.onload = function(ev){
+			console.log(ev) //ProgressEvent > load // 발생한 이벤트 객체가 출력
+			
+			// ev.target.result에 파일 내용을 읽은 결과를 저장해놓음
+			console.log(ev.target)
+			
+			console.log("-----------")
+			
+			console.log(ev.target.result)
+			
+			$("#preview").html(
+				$("<img>").attr({
+					"src": ev.target.result,
+					"width": 300,
+					"height": 200
+				})		
+			)
+			
+			
+		}
+		
+		//FileReader 객체를 이용한 File 객체 정보 읽기
+		// 스크립트의 동작이 멈추지 않는다 쓰레딩 처리 -> 바로 reader.하면서 출력이 불가능!
+// 		reader.readAsText(files[0]); // 텍스트 형식으로 읽기
+		reader.readAsDataURL(files[0]) // Blob 또는 File 형식으로 읽기, 원본 그대로 저장(URL 형태로!)	
+		
+		
+		
+	})
+});
+</script>
+
+</head>
+<body>
+
+<!-- 단일 파일 선택 -->
+<!-- <input type="file" id="upload"/> -->
+
+<!-- 다중 파일 선택 -->
+<input type="file" id="upload" multiple="multiple"/>
+
+<div id="preview"></div>
+</body>
+</html>

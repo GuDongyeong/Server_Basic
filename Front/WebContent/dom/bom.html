@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+//전역변수
+var data = 123;
+console.log(data);
+
+console.log(window.data);
+
+// window.setTimeout(function() {
+// 	alert("윈도우 객체!")
+// }, 200);
+
+// 새창을 여는 함수 - window.open()
+// window.open(url, name, option) : windowid
+//		url -  팝업 주소
+//		name - 팝업창의 이름 설정
+//		option - 팝업창 설정
+
+//원래는 팝업을 띄워주는 함수(요즘에는 새 창으로 열어줌)
+// open("http://www.naver.com", "네이버")
+// open("http://www.naver.com", "_black") // 2번째 인자로 "_blank" - 새창(기본동작)
+// open("http://www.naver.com", "_self") // 2번쨰 인자로 "_self" - 현재창
+
+// 이 때 네이버는 자식윈도우, 원래 창은 부모 윈도우라고 함
+
+// open()함수의 반환값은 윈도우 아이디(윈도우를 구분하는 값)
+// var wid = open("http://www.naver.com", "_blank")
+
+//100밀리초 후에 팝업창(새창 닫기)
+// setTimeout(function(){
+// 	// 윈도우 아이디를 이용한 창 닫기
+// 	wid.close();	
+// }, 100)
+
+console.log("--- navigator ---")
+
+console.log(navigator.userAgent) //브라우저+운영체제의 정보
+// 기반브라우저 엔진 -> 이들을 편집하여 만들어진 브라우저
+// Mozilla/5.0 (Windows NT 10.0; Win64; x64) 
+// AppleWebKit/537.36 (KHTML, like Gecko) 
+// Chrome/81.0.4044.129 
+// Safari/537.36
+
+console.log("--- location ---") // URL 정보 객체
+
+// 주소표시창에 입력한 내용을 기반으로 문자열을 가져와서 파싱
+console.log(location.protocol) // 프로토콜
+console.log(location.host) // 도메인 주소, localhost:8088
+console.log(location.hostname) // 호스트 네임, localhost
+console.log(location.port) // 포트
+
+console.log(location.pathname) // 자원(resource) 주소
+
+console.log(location.href) //전체 url 정보
+
+// location.href = "/function/fn_09.html"
+// location.href 속성의 값을 변경하는 코드는 <a>태그의 href 속성을 설정하고  해당 링크를 클릭한 것과 같은 반응을 보인다
+//		-> 페이지 이동한다
+
+//	 자바스크립트 코드를 이용해서 페이지 이동을 하려면 location.href의 값을 변경한다
+
+// console.log("history") //인터넷 사용 기록 객체
+
+// history.back()// 이전으로 가기(뒤로 가지, 이전 방문 페이지 이동)
+// history.forward() // 다음으로 가기(앞으로 가기, 다음 방문 페이지 이동)
+
+// history.go(n)
+//		n값은 정수, 히스토리 페이지 이동 개수를 표현한다
+//		0은 현재 페이지
+//		양수면 다음으로 가기
+//		음수면 이전으로 가기
+
+//		ex) history.go(-1) -  이전으로 가기, 많이 사용
+
+console.log("--- screen ---")// 모니터 정보 객체
+
+// 브라우저를 최대화했을 떄 차지하는 영역의 크기(픽셀)
+//		-> 브라우저가 위치한 모니터의 크기
+//		-> 시작메뉴 사이즈(높이 40px) 제외된다
+console.log(screen.availWidth)
+console.log(screen.availHeight)
+
+console.log("---")
+// 모니터의 전체 해상도 크기(시작메뉴크기 무시)
+console.log(screen.width)
+console.log(screen.height)
+
+console.log("---")
+
+// 브라우저의 외곽 테두리 크기
+console.log(window.outerWidth)
+console.log(outerHeight)
+
+console.log("---")
+
+console.log(window.innerWidth)
+console.log(window.innerHeight)
+// 윈도우(브라우저 안쪽 크기, 탭메뉴 북마크 표시창 스크롤 모두 빼고)
+// 브라우저 내부(<body>가 보여지는 곳 )의 크기
+//  Whale 브라우저에서는 제대로 동작안함
+//  몇몇 브라우저에서 제대로 동작하지 않을 수 있음
+
+console.log("---")
+//  주모니터를 기준으로 브라우저의 위치를 X Y로 표현
+// Non-IE(IE9.0)이상
+console.log(window.screenX)
+console.log(window.screenY)
+
+console.log(window.screenLeft)
+console.log(window.screenTop)
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

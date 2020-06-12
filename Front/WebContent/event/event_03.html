@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	
+	// 이벤트 리스너 등록 : addEventListener
+	// 이벤트 리스너 해제 : removeEventListener
+	
+	// --- 익명함수로 같은 코드를 작성해도 같은 함수가 아님 ---
+	// removeEventListener 동작하지 않음
+	//	-> 익명함수가 아닌 함수를 따로 정의하여 사용해야 한다
+// 	btnOk.addEventListener("click", function(){
+// 		alert("확인버튼 클릭됨")
+// 	})
+	
+// 	btnOk.removeEventListener("click", function(){
+// 		alert("확인버튼 클릭됨")
+// 	})
+	
+	//-------------------------------
+	
+	// 따로 정의한 함수를 이용한 리스너 등록
+	btnOk.addEventListener("click", clicked)
+	
+	// 테스트 버튼을 클릭하면 확인버튼 이벤트리스너 해제
+	btnTest.addEventListener("click", function(){
+		btnOk.removeEventListener("click", clicked);
+	})
+
+	//---------------------------------
+	
+	// 리스너 콜백함수를 전역함수로 작성해서 등록할 것
+	
+	// btnTest 객체에서 마우스가 올라가면 글자색을 빨강으로
+	// btnTest 객체에서 마우스가 내려가면 글자색을 검정으로
+	
+	btnTest.addEventListener("mouseover", cRed)
+	btnTest.addEventListener("mouseout", cBlue)
+
+
+};
+
+
+// 전역함수로 함수 정의
+function clicked(){
+	alert("확인버튼 클릭!!")
+};
+	
+function cRed(){
+	btnTest.style.color = "red";
+};
+
+
+function cBlue(){
+	btnTest.style.color = "blue";
+};
+</script>
+</head>
+<body>
+
+<button id="btnOk">확인 버튼</button>
+
+<button id="btnTest">테스트 버튼</button>
+
+</body>
+</html>

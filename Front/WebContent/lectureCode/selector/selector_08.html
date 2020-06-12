@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* :root{ *//* 굳이 쓸 필요 없다 */
+html{
+	color: #666;
+}
+
+/********************************************************/
+
+/* :nth-child(2){ color:red; }  최상위 태그 html의 자식 요소 중 2번째 요소 body */
+
+/* 두번째 자식인 요소 중에서 li태그인 요소 */
+/* 형제 요소들 중에서 순서를 계산한다 */
+/* 다른 태그들끼리도 순서를 포함하여 계산한다 */
+li:nth-child(2){ color:red; }
+
+li:nth-last-child(2){ text-decoration: underline; }
+/* text-decoration - 글자 꾸밈 */
+/* underline - 밑줄 */
+
+/* id가 third인 ul의 자손들 중에서 뒤에서 첫번째 자식이 li태그일 때 */
+ul#third li:nth-last-child(1){ text-decoration: line-through; }
+
+/*****************************************************************/
+
+/* 단독으로 사용하지 말 것, 태그를 지정해줄 것 */
+li:first-child{ border: 1px solid red; }
+
+li:last-child{ border: 1px dotted blue; }
+
+/******************************************************************/
+
+/* 형제 요소가 없고 유일한 자식일 때 */
+li:only-child { background: tomato; }
+
+ul:only-of-type { background: yellow; }
+
+
+</style>
+
+</head>
+<body>
+
+<h1 class="title">가상클래스 선택자</h1>
+<hr>
+
+<h2>요소 순서 선택자</h2>
+<ul>
+	<li>HTML5</li>
+	<li>CSS3</li>
+	<li>Javascript</li>
+	<li>jQuery</li>
+	<li>JSP</li>
+</ul>
+
+<ul>
+	<li class='only'>HTML5</li>
+</ul>
+
+<ul id="third">
+	<li>CSS</li>
+	<li>선택자</li>
+	<ul>
+		<li>ID 선택자</li>
+		<li>CLASS 선택자</li>
+	</ul>
+</ul>
+
+</body>
+</html>

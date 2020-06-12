@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	
+	console.log(btnOk)
+	
+	// 클릭했을 떄
+	btnOk.onclick = function(){
+		alert("clicked!!!")
+	}
+	
+	// 요소위로 마우스가 올라갔을 떄
+	btnOk.onmouseover = function(){
+		console.log("mouseover")
+	}
+	
+	//--------------------------
+	
+	// 테스트 버튼
+	var btn = document.getElementById("btnTest");
+	
+	btn.onkeydown = function(){
+		console.log("keydown")
+	}
+	
+	btn.onkeypress = function(){
+		console.log("keypress")
+	}
+	
+	btn.onkeyup = function(){
+		console.log("keyup")
+	}
+	
+	//--------------------------
+
+	//포커스를 얻었을 떄
+	inputTest.onfocus = function(){
+		btnOk.innerHTML = "<h1 style='color: red;'>FOCUS</h1>"
+	}
+	
+	//포커스를 잃었을 떄
+	inputTest.onblur = function(){
+		btnOk.innerHTML = "<h3 style='color: blue'>BLUR</h3>"
+	}
+	
+	
+	
+	
+}
+
+
+
+
+
+</script>
+</head>
+<body>
+
+<button id="btnOk">확인</button>
+
+<button id="btnTest">테스트</button>
+
+<input type="text" id="inputTest"/>
+
+</body>
+</html>

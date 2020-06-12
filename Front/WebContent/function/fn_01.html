@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+// 함수, function
+
+//함수 정의 코드
+function func(){
+	//동작코드
+	console.log("함수입니다")
+}
+
+//함수 호출 코드
+func();
+func();
+func();
+func();
+
+console.log("-----------")
+
+// 변수에 이름없는 함수(익명함수)를 대입
+var func2;
+func2 = function(){
+	console.log("이것도 함수다")
+}
+
+//함수 호출
+func2();
+
+console.log("-----------")
+
+var func3 = func;
+var func4 = func2;
+// 함수 이름 == 참조 주소
+
+func();
+func2();
+func3();
+func4();
+
+console.log("-----------")
+
+//함수의 데이터타입은 function
+console.log( typeof(func))
+console.log( typeof(func2))
+
+console.log("--- func ---")
+console.log(func) // 주소값을 이용하여 어떤 코드가 저장되어 있는지 확인
+
+console.log("--- func2 ---")
+console.log(func2) // 주소값을 이용하여 어떤 코드가 저장되어 있는지 확인
+
+//함수의 위치가 변수에 저장된다
+
+console.log("-----------")
+
+console.log(func()); // 함수에 반환값이 없으므로 undefined
+console.log( func2());
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

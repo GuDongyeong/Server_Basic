@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* div요소에 마우스를 올렸을 때 */
+div:hover{
+	color: red;
+}
+
+/* span태그를 눌렸을 때 (onmousedown) 반응 */
+span:active {
+	color: orange;
+	font-size: 30px;
+}
+
+span:hover{
+	background-color: green;
+}
+
+/* 버튼 타입에는 적용되지 않음..? */
+input[type="button"]:avtive{
+	 color: blue;
+}
+
+/* 이건 됨 */
+button:active{ color: blue; }
+
+
+a:link {/* 방문 전 a 링크 상태 */
+	color: red;
+}
+
+a:visited{/* 방문 후 */
+	color: green;
+}
+
+/* 비활성화 상태인 요소 */
+:disabled{
+	font-size: 8px;
+}
+
+
+/* 활성화 상태인 요소 */
+:enabled{
+	font-style: italic;
+}
+
+/* checkbox나 radio의 checked 상태에 따라 */
+:checked{
+	width: 50px;
+	height: 50px;
+	
+}
+
+/* 포커스를 얻은 요소 */
+:focus{
+	color: tomato;
+}
+
+div:empty{
+	height: 100px;
+	background-color: yellow;
+}
+
+
+
+</style>
+
+
+
+</head>
+<body>
+
+<div>
+
+<span>span 태그 안쪽</span>span 태그 바깥쪽<br>
+<input type="button" value="확인"/><br>
+
+<a href="http://www.naver.com">네이버</a>
+<a href="http://www.daum.net">다음</a>
+<a href="http://www.daum.net">다음</a>
+<hr>
+
+<label><input type="checkbox"/>확인</label>
+<label><input type="radio"/>라디오</label>
+
+<button>버튼</button>
+<button disabled="disabled">버튼</button>
+<hr>
+
+<div></div>
+
+<hr>
+
+<input type="text"/>
+</div>
+
+
+</body>
+</html>

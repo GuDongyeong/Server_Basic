@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>from 태그2</h1>
+<hr>
+
+<!-- form 밖에 있는 input은 submit이 전송하지 않는다. -->
+<!-- 하나의 폼에 하나의 submit만 넣을 것 -->
+
+<form action="" method="get">
+
+
+<label>아이디<input type="text" name="userid" id="uid" size="18" placeholder="아이디를 입력하세요" value="graph"/></label><br><br>
+
+
+<label for="pw">비밀번호</label>
+<input type="password" name="userpw" id="pw" size="20" placeholder="비밀번호를 입력하세요" value="123"/>
+<br><br>
+
+
+<!-- checkbox는 선태갛지 않으면 아예 전달파라미터를 생성하지 않음 -->
+<!-- value를 적용하지 않으면 선택된 checkbox는 "on"을 전달 -->
+<!-- value값이 적용되어 있으면 선택된 checkbox는 value값을 전달 -->
+<!-- name 속성이 같은 checkbox가 여러 개있어도 각각의 항목으로 전달함 -->
+<!-- 다중 선택이 가능, 같은 카테고리에 여러 선택항목을 넣을 때 -->
+<label for="chk1">사과</label>
+<input type="checkbox" id="chk1" name="chk" value="Apple" checked="checked"/> | 
+<label for="chk2">바나나</label>
+<input type="checkbox" id="chk2" name="chk" value="Banana" /> | 
+<input type="checkbox" id="chk3" name="chk" />
+<br><br>
+
+
+<!-- radio group : 같은 name일 떄 그룹 중 하나의 radio만 선택 가능, 필수로 선택해야 하기 때문에 checked를 걸어놓음 -->
+<!-- value가 없으면 on으로 전달 -->
+<!-- value 값을 넣으면 해당 값으로 전달 -->
+<!-- name이 다른 radio는 중복 선택이 안된다 -->
+<!-- name이 같은 radio 들을 라디오그룹이라고 한다 -->
+<label><input type="radio" name="gender" value="m" checked="checked"/>남</label> 
+<label><input type="radio" name="gender" value="f"/>여</label> 
+<label><input type="radio" name="gender" value="o"/>기타</label>
+<br><br>
+
+<!-- 보통 자바 스크립트와 함께 사용 -->
+<!-- 이벤트 : 사용자의 입력이 있을 때 동작하면 이벤트라고 함, 이벤트속성은 on으로 시작 -->
+<!-- input 위에서 이벤트가 발생하면 자바스크립트 동작을 시행한다 -->
+<input type="button" value="확인" onclick="alert('알림! 확인됐습니다!')"/>
+<br><br>
+
+<!----------------------------------------------------  -->
+
+
+<!-- submit 버튼으로 생성됨 -->
+<button>버튼</button>
+
+<!-- input button 과 같음 -->
+<button type="button">버튼2</button>
+<br><br>
+
+
+<input type="file" name="f" value="파일 하나"/>
+<!-- input 속석은 name을 꼭 지정해주어야 서버로 데이터가 전달 가능 -->
+<!-- 지금은 파일 이름만 전달 -->
+<!-- 띄어쓰기는 +로 치환 -->
+
+<input type="file" name="f_multi" multiple="multiple"/>
+<!-- multiple 속성을 부여하면 여러 개 가능 -->
+
+
+<!-- submit은 자바스크립트라고 할수도... 동작을 실행시킨다 -->
+<br><br>
+<!-- value가 없으면 제출 이라고 표기 -->
+<input type="submit" value="전송"/>
+<input type="reset" value="초기화"/>
+<!-- input 태그의 모든 내용을 새로고침 없이 초기화 -->
+<br><br>
+
+
+NUMBER<input type="number" name="n" min="1" max="100" step="2" value="51"/>
+<!-- 브라우저마다 구현 모습이 다름, 보통 그냥 개발자가 코딩으로 구현함 -->
+<br><br>
+
+EMAIL<input type="email" name="e" />
+<!-- 입력값에 @가 포함되어야함 -->
+<br><br>
+
+URL<input type="url" name="u"/>
+<!-- 프로토콜과 경로 문자 확인 http:// -->
+<br><br>
+
+RANGE<input type="range" name="r" min="30" max="200" step="2" value="150"/>
+<!-- 범위값, 슬라이드바를 이용해 값을 조절 -->
+<br><br>
+
+COLOR<input type="color" name="c" />
+<!-- 컬러 Picker -->
+<!-- 16진수 표현법(Hexadecial)로 값이 전달 -->
+<br><br>
+
+DATE<input type="date" name="t"/>
+<!-- 날짜 Picker -->
+<!-- 	전송형태 : yyyy-mm-dd -->
+<br><br>
+
+TIME<input type="time" name="t"/>
+<!-- 시간 Picker -->
+<!-- 	전송형태 : hh24:mi 형식 -->
+<br><br>
+
+<!-- ------------------------------------------ -->
+
+<!-- 데이터 목록 생성태그 -->
+<!-- datalist 단독으로는 화면에 나타나지 않음 -->
+<!-- input 태그와 연결하여 사용 -->
+
+<datalist id="fruits">
+	<option value="Apple">사과</option>
+	<option value="Banana">바나나</option>
+	<option value="Cherry">체리</option>
+</datalist>
+
+<!-- datalist의 id값을 input 태그의 list 속성으로 연결 -->
+<input list="fruits" name="fruit" id="fr"/>
+
+
+
+
+
+
+
+</form>
+
+</body>
+</html>

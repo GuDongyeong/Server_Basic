@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+#nav{
+	/* <ul> 태그의 목록 항목 스타일 제거(disc) */
+	list-style-type: none;
+	
+	/* 기본 여백 제거 */
+	margin: 0;
+	padding: 0;
+}
+
+#nav li{
+	/* 수평으로 일렬로 배치하기 */
+	float: left;
+	
+	/* 외부 여백 */
+	margin: 10px;
+	
+	background-color: #3e7;
+	padding: 10px;
+	
+	/* 테두리 둥글게 표현 */
+	border-radius: 30px;
+}
+
+#nav li:hover{
+	background-color: tomato;
+}
+
+#nav li a{
+	/* 글자 색상 고정: 회색 */
+	color: gray;
+	
+	/* 글자 꾸밈선 제거 */
+	text-decoration: none;
+}
+</style>
+
+
+</head>
+<body>
+
+<!-- 웹사이트의 메뉴를 만들 때 ul태그를 이용하여 만듦 -->
+<!-- 네비게이터 : 웹사이트 내에서 어디로 가야하는지 알려주는 페이지(사이트 맵) -->
+<!-- 메뉴바 - 네비게이션바 -->
+<ul id="nav">
+	<li><a href="#">메뉴1</a></li>
+	<li><a href="#">메뉴2</a></li>
+	<li><a href="#">메뉴3</a></li>
+	<li><a href="#">메뉴4</a></li>
+	<li><a href="#">메뉴5</a></li>
+</ul>
+
+
+
+
+</body>
+</html>

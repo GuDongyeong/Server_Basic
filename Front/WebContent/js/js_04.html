@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+
+// 변수 선언
+var n1;
+
+// 변수값 대입, 데이터 타입에 상관없이 저장 가능 loose한 언어
+n1 = '123';
+
+console.log(n1);
+
+// 변수를 선언과 동시에 초기화
+var n2 = "34.567";
+console.log(n2);
+
+console.log("-------")
+
+// 숫자형으로 반환
+console.log( Number(n1));
+console.log( Number(n2));
+
+//원본은 그대로
+console.log( n1);
+console.log( n2);
+
+console.log( n1=Number(n1));
+console.log( n2=Number(n2));
+
+console.log("-------")
+
+//데이터타입을 판단하여 알려준느 함수
+console.log( typeof(n1) + " : " + n1)
+console.log( typeof(n2) + " : " + n2)
+// 전부다 문자형이 되어 버림
+
+//여러 줄이더라도 이렇게 할 것
+console.log("---n1----")
+console.log( typeof(n1))
+console.log(n1)
+console.log(typeof(n2))
+console.log(n2)
+
+console.log("-------")
+
+//Number.prototype.toString()
+// 자료형.인스턴스.함수
+// -> 넘버타입으로 만들어진 인스턴스라고 생각할 것
+
+console.log( n1.toString()) //10진수 형태의 문자로 변환
+
+console.log( n1.toString(2)) //2진수 형태로 
+console.log( n1.toString(8)) //8진수 형태로
+console.log( n1.toString(16)) //16진수 형태로
+
+console.log("-------")
+
+// 소수점 자리수를 고정함
+console.log( n1.toFixed(2)) //소수점 2자리까지 표현될 숫자를 문자로
+console.log( n2.toFixed(3)) //소수점 3자리까지 표현될 숫자를 문자로
+// 자리수를 넘치면 반올림
+
+console.log("-------")
+
+console.log( Number(n1.toFixed(2))) //Number형으로 바꾸면 소수점 .00은 버려짐
+
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

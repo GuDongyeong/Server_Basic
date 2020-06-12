@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	// #myDiv의 jQuery DOM 객체 얻기
+	var $myDiv = $("#myDiv");
+	
+	// 기존에 가지고 있던 내용물을 전부 덮어씌운다
+	$myDiv.html("<h3>HTML div</h3>")
+	
+	// innerHTML 내용물을 읽어서 변수에 저장하기
+	var h = $myDiv.html()
+	console.log(h)
+	
+	// 변수에 새 DIV 구문 텍스트 추가
+	h += "<div>insertNode</div>";
+	
+	console.log("--------")
+	console.log(h) // 텍스트 확인
+	
+	// 최종 HTML 텍스트를 #myDiv에 반영하기
+	$myDiv.html(h)
+	
+	// -> append코드와 같다
+	
+	//--------------------------------
+	
+	// 새로운 p 태그 생성
+	var $p = $("<p>")
+	
+	// p  태그 내부에 텍스트 추가하기
+	$p.text("새로 만든 p 태그입니다")
+	
+	// #myDiv에 새로 만든 p 태그 추가하기
+	$myDiv.append($p);
+	
+	//-----------------------
+	
+	// 태그가 반영된다
+	$myDiv.html("<h1>HTML</h1>");
+	
+	// 태그가 반영되지 않고 단순 텍스트로 처리된다
+	$myDiv.text("<h1>TEXT</h1>")
+	
+	//-----------------------
+
+	// < 와 > 를 태그 문자로 인식되지 않도록 하기위해 사용하는 키워드
+	// &lt; &gt;
+	$myDiv.html("&lt;h1&gt;HTML&lt;/h1&gt;");
+
+})
+
+</script>
+</head>
+<body>
+
+<div id="myDiv">
+	<h1>jQuery 테스트</h1>
+</div>
+
+
+</body>
+</html>

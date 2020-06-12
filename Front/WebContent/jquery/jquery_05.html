@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	
+	// 전체 p 태그에 테두리 씌우기
+	$("p").css("border", "1px solid #ccc");
+	
+	//---------------------------
+	
+	// 전체 p태그에서 하나씩 지목하여 배경색 지정하기
+	$("p").each(function(){
+		console.log( $(this).is($("#stop")))
+		
+		if( $(this).is($("#stop"))){
+// 			return false; // each() 함수 종료 코드
+			// 반환값은 each가 받는다, each 함수가 false를 받으면 종료된다
+			
+			return; // 이번 한번만 함수 종료, 자기 함수만 중단시키고 반환값은 따로 없기 떄문에 each()는 멈추지 않는다
+		
+			// 콜백함수에서 return false로 false값을 전달하면 콜백함수를 호출한 객체가 중단된다
+		}
+		
+		$(this).css("background", "tomato")
+		
+	})
+	
+	//---------------------------
+
+	console.log($("div")) //  속성 중에 Children에서 하위 노드들을 확인 가능 , find가 이용하는 속성
+	
+	// div 태그의 자손노드 중에서 #stop을 찾아서 반환
+	console.log($("div").find("#stop")) // selector : div #stop
+	
+	// div 태그의 자손노드 중에서 #stop을 찾아서 반환
+	console.log($("div #stop")) // selector : div #stop
+	
+	// find API는 결국 css 셀렉터를 이용하여 요소를 찾는다
+	
+	//---------------------------
+
+	var $div = $("div");
+	$div.find("#stop")
+	
+});
+</script>
+</head>
+<body>
+
+<div>
+	<span>하나</span>
+	<p>둘</p>
+	<pre>셋</pre>
+	<p id="stop">넷</p>
+	<p>다섯</p>	
+</div>
+
+</body>
+</html>

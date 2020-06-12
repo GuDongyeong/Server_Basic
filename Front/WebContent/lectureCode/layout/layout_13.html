@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+.box{
+	width: 100px;
+	height: 100px;
+	border: 1px solid red;
+	color: #ccc;	
+}
+
+
+/* ************************************************ */
+
+/* top bottom left right 요소와 함께 사용, 절대적인 위치를 지정하는 것 */
+/* 기준점 : 화면상 왼쪽 위끝, 오른쪽 아래 끝 */
+.absolute{ position: absolute; }
+
+#a1{
+	top: 50px;
+	left: 50px;
+	
+	z-index: 9999;
+}
+
+#a2{
+	/* 브라우저 화면 크기를 기준으로 이동된다, 스크롤의 영향x */
+	bottom: 100px;
+	right: 100px;
+}
+
+#a3{
+	width: 300px;
+	height: 300px;
+	
+	/* 작성된 순서에 따라 겹쳐짐 */
+	background: yellow;
+	
+	left: 150px;
+	top: 50px;
+}
+
+#a4{
+	background: blue;
+	
+	/* 모니터의 단면이 0(기본값), 양수면 앞으로 음수면 뒤로, 상대적인 개념 */
+	z-index: 3333;
+	
+	/* 기준점 부모요소(position을 받고 있을 때, 아니면 기준이 되지 못함)를 기준 */
+	/* 원래 바디에 곧바로 쓰는게 아니라 부모 요소 안에서 absolute를 사용하는 것) */
+	right: 10px;
+	bottom: 10px;
+
+}
+/* ************************************************ */
+
+.relative{ position: relative; }
+
+/* ************************************************ */
+
+.fixed{ position: fixed;
+	bottom: 0;
+	right: 0;
+ }
+
+
+</style>
+</head>
+<body>
+
+<!-- 포지션을 주면 html문서 형식에서 빠지게 된다. 다른 요소에 간섭받지 않음 -->
+<div id="a1" class="box absolute">절대위치 박스1</div>
+
+<div id="a2" class="box absolute">절대위치 박스2</div>
+
+<div id="a3" class="box absolute">
+	<div id="a4" class="box absolute"></div>
+</div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus eu vestibulum enim, sit amet vestibulum enim. Praesent finibus, urna vel auctor faucibus, ligula risus tempus neque, a maximus sem purus et sapien. Sed venenatis ligula euismod, lobortis augue non, tincidunt magna. Quisque ullamcorper, ligula quis pellentesque dignissim, erat felis pellentesque dui, at eleifend erat quam ut urna. Nullam a fringilla risus. Pellentesque facilisis erat malesuada, eleifend arcu et, elementum ante. Integer bibendum velit non pellentesque posuere. Nullam elementum luctus imperdiet. Morbi enim purus, malesuada eu tincidunt aliquam, faucibus non ligula. Ut tincidunt nunc convallis magna hendrerit pretium. Integer pharetra, velit vel vehicula efficitur, ante tellus vulputate arcu, eu tempus lectus arcu eu risus. Sed iaculis facilisis arcu eu pharetra. Pellentesque sit amet massa dui. Aenean condimentum ullamcorper lectus, vitae ultricies metus finibus eu. Fusce eu mauris sem.</p>
+
+<p>Donec a felis tortor. In sit amet ipsum accumsan, sodales erat sit amet, bibendum turpis. Aenean quis aliquam risus. Nulla malesuada quam non felis iaculis, lobortis congue sapien venenatis. Quisque at ipsum nunc. In dictum finibus tincidunt. Curabitur tincidunt, purus ut viverra euismod, elit metus varius magna, vitae viverra lacus ligula vel tellus. Proin a libero sit amet ex efficitur sollicitudin. Pellentesque consequat lacinia magna eget sodales.</p>
+
+<p>Nullam lectus tortor, finibus ac consequat vel, sollicitudin at est. Sed placerat, diam quis volutpat finibus, lorem sapien aliquam odio, quis pellentesque augue est aliquam nibh. Cras hendrerit tincidunt leo, nec faucibus metus consequat sed. Fusce viverra tempus fringilla. Praesent id pellentesque tortor, ut dapibus nisl. Morbi non nibh augue. Aliquam ac velit massa. Duis euismod feugiat massa, quis tempor erat ultrices a. Nam et velit commodo, hendrerit elit in, sodales mauris. Etiam dictum finibus sodales.</p>
+
+<div class="box relative">상대위치 박스</div>
+
+<p>Ut ut sem quis diam dapibus luctus. Suspendisse rutrum nunc a tellus pellentesque, in convallis nunc mattis. Maecenas a dolor sed tortor ultrices porttitor. Vivamus faucibus, dolor bibendum iaculis ultricies, urna augue molestie libero, a dignissim magna ligula non ipsum. Mauris eleifend ultrices suscipit. Vivamus suscipit sit amet est eget porttitor. Quisque sed lacinia quam. Aliquam condimentum felis orci, at luctus tellus lacinia eu. Sed sit amet vulputate urna. Donec ex est, hendrerit eu tellus sed, vestibulum iaculis leo.</p>
+
+<div class="box fixed">고정위치 박스</div>
+
+<!-- relative는 absolute의 기준점 -->
+<div class="relative">
+	<div class="box absolute">부모 태그 안 절대위치 박스</div>
+</div>
+
+AAA
+
+
+</body>
+</html>

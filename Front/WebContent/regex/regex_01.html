@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var name = "Dongyeong Gu"; // 단순 문자열
+var name2 = "Alice a Dana"
+
+var regex = /Gu/ // 정규식 리터럴
+
+// 정규식.test("문자열")
+// boolean 반환
+//	true - 정규식 패턴이 문자열에 포함
+//	false - 포함되지 않음
+
+console.log(regex.test(name))
+console.log(regex.test(name2))
+console.log(/Dana/.test(name2))
+console.log(/a/.test(name2))
+
+//------------------------------------
+
+// 정규식.exec("문자열")
+//	배열 - 정규식 패턴으로 찾은 문자열
+//	null - 찾는 패턴이 없을 때
+console.log(regex.exec(name))
+console.log(regex.exec(name2))
+console.log(/a/.exec(name2))
+
+//------------------------------------
+
+// "문자열".match(정규식)
+//	"배열" - 정규식 패턴으로 찾은 문자열
+//	null - 찾는 패턴이 없을 떄
+
+console.log(name2.match(/a/)) // 기본매칭, 처음 것
+console.log(name2.match(/a/g)) // g 전역 검색, 전부 다 매칭
+console.log(name2.match(/a/i)) // i 대소문자 구분 없이 매칭
+console.log(name2.match(/a/gi)) // gi 대소문자 구분 없이 전부 매칭
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

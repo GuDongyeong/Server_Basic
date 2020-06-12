@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form action="" method="get">
+
+<!-- 크기 지정해도 정확하지 않다 -->
+<!-- 긴 글을 개행과 함께 보낼 수 있다 -->
+<!-- form post를 사용할 것 -->
+<!-- innerHTML (여는 태그, 닫는 태그 사이) 에 전송할 데이터가 입력됨 -->
+<!-- innerHTML 영역에 기본값을 설정할 수 있다 -->
+<textarea rows="10" cols="50" name="content" placeholder="긴 글 작성은 여기에 하세요">
+기본값은 여기에, 입력 데이터 처리되는 곳
+</textarea>
+<br><br>
+
+<input type="submit" value="전송"/>
+<hr>
+
+<!-- select 태그 -->
+<!-- 선택할 수 있는 리스트 -->
+<!-- datalist는 타이핑 가능, select는 정해진 것만 선택 가능 -->
+<select name="month">
+	<option value="0"></option>
+	<option value="one">1 개월</option>
+	<option value="two">2 개월</option>
+	<option value="three" selected="selected">3 개월</option>
+</select>
+
+<!-- name은 select 태그에 -->
+<!-- value는 option 태그에 -->
+<!-- 0이 아닐 경우에만 전송될 수 있도록 하는 것은 자바 스크립트로 구현 -->
+</form>
+</body>
+</html>

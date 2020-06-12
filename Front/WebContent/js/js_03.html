@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+console.log( 50); //Number
+console.log("50"); //String
+
+console.log("--------------------")
+
+//둘 다 문자열
+console.log(50+ "50");
+console.log("50" + 50);
+
+console.log("--------------------")
+
+// Number로 반환
+// true는 1 false는 0
+console.log(true + 123);
+console.log(true+ true + 123);
+
+console.log("--------------------")
+
+// 문자를 숫자로 치환
+console.log( parseInt("50" ) ) //"50" -> 50
+console.log( parseInt("123ABC")) //"123ABC" -> 123 뒤의 문자는 무시하고 숫자형만 파싱
+console.log( parseInt("ABC123")) // NaN(Not a Number) 앞에 문자가 있으면 파싱 안해줌
+console.log(parseInt("123ABC456")); //"123ABC456" -> 123 맨앞의 숫자형만 파싱
+
+console.log("--------------------")
+
+console.log( parseInt("123.456")) //123 정수 부분만 나옴
+console.log( parseFloat("123.456")) //소수부 까지 모두
+console.log( Number("123.456"))
+
+
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

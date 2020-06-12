@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function func(){
+	var data = 10;
+	var result = data + 100;
+	
+	console.log("--- 연산 결과 ---")
+	console.log(result)
+	
+	alert("이벤트 속성으로 작성할 코드가 너무 길어지면 함수를 따로 만들어서 호출해주세요!")
+}
+
+
+
+</script>
+</head>
+<body>
+
+<!-- div 요소에서 click 이벤트가 발생하면 실행될 스크립터 코드를 onclick 속성의 값으로 작성한다 -->
+<div onclick="alert('clicked!');">하하</div>
+
+<div onmousemove="console.log('hi');" onclick="func();">호호</div>
+
+</body>
+</html>

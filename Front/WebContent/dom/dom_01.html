@@ -1,0 +1,106 @@
+	<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+//-----잘못된 dom 객체 사용법-----
+
+
+//id가 "header"인 요소노드를 얻어오기
+var h = document.getElementById("header");
+
+// 요소 노드 출력하기
+console.log(h) // null
+
+// 문서객체를 저장하고 있는  DOM트리를 구성하기 전에 document를 이용하여 노드에 접근하면 안된다
+// DOM트리는 HTML 문서 전체를 브라우저가 읽은 이후에 완성된다
+
+// document.을 이용하여 DOM트리에 접근하려면 DOM트리가 완성된 이후에 코드가 실행되도록 만들어야 한다
+</script>
+
+<script type="text/javascript">
+// DOM 객체 이용 방법2
+
+// 이 객체는 window 생략하지 않음
+//	DOM 트리가 완성된 이후 수행할 코드로 document.객체를 사용한다
+window.onload = function() {
+	console.log("--- window.onload ---")
+	
+	var e = document.getElementById("header")
+	console.log(e)
+	
+	e.style.color = "blue";// 이후에 쓰여지는것으로 덮어씌워짐
+}
+
+// window.onload
+//	HTML 코드를 전부 읽고 나서 DOM객체를 모두 적재시킨 시점에 수행할 코드를 작성하는 속성
+//	-> DOM 트리가 완성된 시점을 뜻한다
+//	load - 메모리에 적재된 상황(이벤트), 메모리 RAM에 데이터, 코드, 객체 등을 올리는 것
+
+// onload - load이벤트가 발생했을 때 실행될 코드를 정의, 함수(콜백 형태)로 코드를 정의한다
+
+//	( 이벤트 리스너 - 이벤트가 발생하면 실행되는 코드)
+//	(  이벤트 리스너 == 이벤트 처리 코드 == 이벤트 핸들러)
+
+//	** 이벤트 리스너 안쪽에는 되도록 함수 정의하지 말 것( 개발자가 제어할 수 없다 )
+
+
+
+
+</script>
+
+
+
+</head>
+<body>
+<script type="text/javascript">
+// DOM 객체 이용방법 3
+//	이벤트 처리 코드를 이용하여 document객체를 이용한다
+
+function chgBgYellow() {
+	console.log("--- mouseenter ---")
+
+	var y = document.getElementById("header")
+	y.style.backgroundColor = "yellow"
+}
+
+function chgBgNone() {
+	console.log("--- mouseleave ---")
+
+	var n = document.getElementById("header")
+	n.style.backgroundColor = "white"; //배경색을 흰색으로
+	n.style.background = "none"; //배경관련설정을 없앰
+}
+
+
+
+
+</script>
+
+
+<!-- <h1 id="header" onmouseenter="console.log('enter')" onmouseleave="console.log('leave')">HEADER TEXT</h1> -->
+<h1 id="header" onmouseenter="chgBgYellow();" onmouseleave="chgBgNone();">HEADER TEXT</h1>
+
+<script type="text/javascript">
+// DOM객체 이용 방법 1
+//	</body>태그 닫는 직전에 <script>태그를 이용하여 작성한다
+
+console.log("--- body 태그 닫기 직전 ---")
+
+var h = document.getElementById("header");
+console.log(h)
+
+h.style.border = "1px solid #ccc"
+
+document.getElementById("header").style.color = "red"
+
+// 속성에 대입한 값이 출력된다
+console.log(h.style.border)
+console.log(h.style.color);
+
+
+</script>
+</body>
+</html>

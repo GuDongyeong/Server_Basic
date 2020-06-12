@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>목록 태그</h1>
+<h3>ul, ol, li</h3>
+<hr>
+
+<ul>
+	<li>첫 번째</li><!-- 자동으로 disc를 만들어줌 (목록 표시 점?) -->
+	<li>두 번째</li>
+	<li>세 번째</li>
+	
+	<!-- Warning 뜬다 -->
+	<ul><!-- 내부의 목록은 들여쓰기 되어서 표현, 목록 표시 점도 바뀜 -->	
+		<li>네 번째</li>
+		<li>다섯 번째</li>	
+	</ul>
+	
+	<!-- li 안에 넣어주면 됨 -->
+	<li style="list-style: none;"> <!-- CSS 적용 시켜서 점을 없애주어야한다 -->
+	<ul>
+		<li>네 번째</li>
+		<li>다섯 번째</li>
+	</ul>
+	</li>
+	
+</ul>
+
+<hr>
+<ol>
+	<li>첫 번째</li><!-- 자동으로 disc를 만들어줌 (목록 표시 점?) -->
+	<li>두 번째</li>
+	<li>세 번째</li>
+	
+	<ol>
+		<li>네 번째</li>
+		<li>다섯 번째</li>	
+	</ol>
+
+	<!-- li 안에 넣어주면 됨 -->
+	<li style="list-style: none;">
+	<ol>
+		<li>네 번째</li>
+		<li>다섯 번째</li>
+	</ol>
+	</li>
+	
+</ol>
+
+
+</body>
+</html>

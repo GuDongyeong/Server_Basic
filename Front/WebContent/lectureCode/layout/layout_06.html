@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+span{ font-size: 30px; }
+
+#span1{
+	background: red;
+	float: left;
+}
+
+#span2{
+	background: green;
+	float: right;
+}
+
+#span3{
+	background: blue;
+}
+
+div{
+	/* 컨텐츠(내부) 영역 정렬 */
+	text-align: center;
+	
+	width: 500px;
+	
+	margin: 0 auto;
+	
+	/* block 요소의 내부 컨텐츠 정렬 : text-align 사용 */
+	/* black 요소의 외부 정렬 : margin:0px auto 사용 */
+	
+	/* ** 외부 정렬을 하려면 width가 설정되어 있어야 한다 */
+	/* 프로젝트할 떄는 1000px이하로 잡을 것 */
+}
+
+body{
+	/* 이렇게 하면 div가 화면의 가운데 오지 않을까? */
+	text-align: center;
+	/* 아님! 블락요소는 한줄 전체를 차지하기 때문에 */
+	/* black 요소는 부모 요소에서 text-align을 적용해도 화면에 반영되지 않는다 */
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- 인라인 요소는 코드를 쓸 때 탭, 개행 등이 띄어쓰기로 반영된다 -->
+<div>
+	<span id="span1">SPAN1</span><span id="span2">SPAN2</span><span id="span3">SPAN3</span>
+</div>
+
+</body>
+</html>

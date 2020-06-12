@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	var $btnOk = $("<button id='btnOk'>확인</button>")
+	
+// 	$("#btnAlert").on("click", function(){
+	$("#btnAlert").click(function(){
+		alert("알랑앙잉림알림")
+		console.log("dkdkdk")
+		
+		// <div> 태그의 첫번째 자식으로 btnOk 추가 - DOM 트리 추가됨
+		$btnOk.prependTo($("div"))
+		
+// 		$("#btnOk").on("click", function(){
+// 			alert("btnOk HELLO")
+// 		})
+		// 논리적으로 바람직하지 않은 구조
+		//	이벤트 리스너 안에서 이벤트 등록하는 코드를 또 적으면 등록되는 코드가 중첩돼서 처리된다
+		//	-> 한번의 이벤트에 여러 번 콜백함수가 호출됨
+		
+	})
+	
+	//------------------------------------
+	
+	// #btnOk 요소에 click 이벤트 리스너 등록하기
+	$("#btnOk").on("click", function(){
+		alert("btnOk HELLO")
+	})
+	// 실행되지 않음, DOM  객체 생성됐을 떄 #btnOk 가 없다
+	
+	// 이벤트 리스너와 요소 노드가 bind 되는 시점에 #btnOk 요소가 DOM 트리에 존재하지 않는다
+	
+	// DOM 트리에 존재하지 않는 객체를 찾아서 출력하면 n.fn.init라고 출력되지만 내용물이 비어있다
+	console.log($("btnOk"))
+	
+	//------------------------------------
+
+	// 동적(Dynamic)으로 생성되는(추가되는) 요소에는 이벤트 리스너를 곧바로 등록할 수 없다
+	//	-> 이벤트리스너를 등록하는 시점에는 존재하지 않아서
+	
+	//-----------------------------------
+	
+	// 해결법 : 이벤트리스너를 동적으로 바인딩한다
+	// 이벤트가 bind 되는 시점에 존재하는 부모요소에 이벤트를 등록
+	// 동적으로 추가될 위치에 이벤트 리스너를 등록해둔다
+	
+	// div #btnOk 에 걸어주는 것과 같음
+	// on() 함수의 두 번쨰 인자로 선택자(하위노드)를 입력할 수 있다
+	// 이벤트가 동작하는 범위를 조절할 수 있다
+	$("div").on("click", "#btnOk", function(){
+		// 이벤트 리스너를 div 태그에 적용한다
+		// 이벤트에 대한 반응은 div #btnOk 에서 한다
+		
+		alert("HELLO")
+		
+		// #btnAlert 의 click 이벤트리스너 제거
+// 		$("#btnAlert").off("click")
+		
+		// #btnAlert 의 모든 이벤트 리스너 제거
+		$("#btnAlert").off();
+
+	})
+	
+	// #btnCancel을 누르면 #btnOk 이벤트리스너 제거
+	$("#btnCancel").on("click", function(){
+		
+// 		$("#btnOk").off(); // 제거되지 않음 
+		
+// 		$("div").off("click"); // div의 모든 click이 제거됨
+
+		// on을 이용하여 이벤트를 등록한 객체에 off 해야한다
+		// 이벤트 동작이 #btnOk 였어도 이벤트 리스너가 등록된 주체는 div태그이므로 div 태그에서 이벤트를 제거해야함
+		$("div").off("click", "#btnOk"); // 제거됨, 
+		alert("확인 제거")
+	})
+	
+	
+})
+</script>
+</head>
+<body>
+
+
+<div>
+	<button id="btnAlert">알림</button>
+	
+	<button id="btnCancel">확인 이벤트 제거</button>
+</div>
+
+</body>
+</html>

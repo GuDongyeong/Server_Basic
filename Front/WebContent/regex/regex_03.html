@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// 이름은 한글로 두글자 이상
+	// 아이디는 6글자 이상, 첫문자는 대문자만 가능, 영문자, 숫자로 구성
+	// 패스워드는 8글자 이상, 영문자, 숫자로만 구성
+
+	// 각 요소가 포커스를 잃을 때 검증
+	// 조건에 만족하지 못하면 각 요소 바로 밑에 경고 문구 출력 (글자색빨강)
+//		#uname - 한글만 가능합니다 (2자 이상)
+//		#uid - 영어, 숫자만 가능합니다 (6자 이상)
+//		#upw - 8자 이상 작성하세요
+	
+	
+	//초기 포커스 설정
+	$("#uname").focus();
+	
+	
+	// #uname 검증
+	$("#uname").blur(function(){
+		
+		var reg = /^[가-힣]{2,}$/
+		
+		if( !reg.test($(this).val())){
+			$("#unamemsg")
+				.css("color", "red")
+				.html("한글만 가능합니다(2자 이상)")
+		}else{
+			$("#unamemsg").html("")
+		}		
+		
+	});
+
+	// #uid 검증
+	$("#uid").blur(function(){
+		
+		var reg = /^[A-Z][A-Za-z\d]{5,}$/
+		
+		if( !reg.test($(this).val())){
+			$("#uidmsg")
+				.css("color", "red")
+				.html("영어, 숫자만 가능합니다 (6자 이상)")
+		}else{
+			$("#uidmsg").html("")
+		}		
+		
+	});
+
+	// #upw 검증
+	$("#upw").blur(function(){
+		
+		var reg = /^[A-Za-z\d]{8,}$/
+		
+		if( !reg.test($(this).val())){
+			$("#upwmsg")
+				.css("color", "red")
+				.html("8자 이상 작성하세요")
+		}else{
+			$("#upwmsg").html("")
+		}		
+		
+	});
+	
+	
+	
+	
+	
+})
+
+</script>
+<style>
+input, span{
+	line-height: 1.5em;
+}	
+
+</style>
+</head>
+<body>
+
+<div>
+	이름 : <input type="text" name="uname" id="uname"/><br>
+	<span id="unamemsg"></span><br>
+	아이디 : <input type="text" name="uid" id="uid"/><br>
+	<span id="uidmsg"></span><br>
+	패스워드 : <input type="text" name="upw" id="upw"/><br>
+	<span id="upwmsg"></span><br>
+</div>
+
+</body>
+</html>

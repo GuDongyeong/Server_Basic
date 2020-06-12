@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+window.onload = function(){
+	
+	// <body> 태그의 DOM 객체
+	console.log(document.body);
+	
+	// <body> 태그의 내용물(컨텐츠) 출력
+	console.log(document.body.innerHTML) // String 으로 출력
+	
+	// 내용물을 전체 치환한다, 태그 내의 내용물을 아예 바꾼다
+// 	document.body.innerHTML = "<div><h1>INNER HTML</h1></div>"
+	
+	// 기존의 내용물에 추가한다
+	document.body.innerHTML += "<div><h1>INNER HTML</h1></div>"
+	
+	//------------------------------------
+	
+	var content = document.getElementById("content")
+	
+	content.innerHTML = "<h3>innerHTML</h3>"; // 내용물 전체 치환
+	content.innerHTML += "<p>테스트</p>"; // 내용물 추가
+	content.innerHTML += "<hr>"; //내용물 추가
+	
+	//------------------------------------
+	
+	// 이렇게 많이 사용
+	// 미리 innerHTML로 넣을 내용을 String으로 작성
+	var h ="";
+	h += "<h3>테스트</h3>";
+	h+="<p>하나</p>"
+	h+="<p>둘</p>"
+	h+="<p>셋</p>"
+	console.log(h)
+	
+	//준비해놓은 스트링을 한번에 집어넣기
+	content.innerHTML = h;
+	
+	//========================================
+		
+	console.log("--- innerHTML ---")
+	console.log(content.innerHTML)
+	
+	console.log("--- innerText ---")
+	console.log(content.innerText)
+	
+	//------------------------------------
+	
+	content.innerText = "<h1>하이</h1>" //태그를 단순 텍스트로 인식하여 모두 문자로 집어넣는다
+	
+	
+	
+}
+
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+<div id="content">CONTENT</div>
+
+</body>
+</html>

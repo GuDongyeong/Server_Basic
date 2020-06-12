@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+/* 곧바로 다음에 인접한 한 개 */
+h1 + p { background: yellow;}
+
+/* 선택 대상 없음 */
+h1 + h1 { background: green;}
+
+/* h1을 뒤따르는 모든 p요소,중간에 다른 요소가 있어도 그 뒤의 모든 p요소까지 */
+h1 ~ p { border: 1px solid red; }
+
+/*****************************************************/
+
+/* 선택 대상 없음 */
+h1 + .choco { color: chocolate; }
+
+h1 ~ .choco { background: chocolate; }
+
+.choco + .choco { color: blue; }
+
+p + p { font-style: italic; }
+
+</style>
+
+</head>
+<body>
+
+<p>첫번째</p>
+<h1>두번째</h1>
+<p>세번째</p>
+<p class="choco">네번째</p>
+<p class="choco">ektjt번째</p>
+<h1>여섯번째</h1>
+<!-- <span>여섯번째 span</span> -->
+<p>일곱번째</p>
+<p>여덟번쨰</p>
+
+
+</body>
+</html>

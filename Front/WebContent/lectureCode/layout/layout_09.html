@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+div{
+	width: 250px;
+	border: 1px solid #ccc;
+}
+
+
+span{
+	/* 테두리는 인라인에 적절하지 않다 */
+/* 	border: 1px solid red; */
+
+	background-color: #f99;
+	
+	/* 적용되지 않음 */
+	width: 100px;
+	height: 100px;
+	
+	/* 기본 값이 기본 폰트값의 1.35em, 웹에서는 1.6, 1.8 정도 */
+	/* 줄간격(기본값: 1.35em) */
+	line-height: 1.35em;
+	
+	/* 글자크기(기본값: 16px) */
+	font-size: 16px;
+	
+	/* 줄간격과 함께 조절해주어야 한다 */
+	padding: 5px;
+	
+	margin: 30px;
+}
+</style>
+
+</head>
+<body>
+
+
+<div>
+	<span>SPAN1</span>
+	<span>SPAN2</span>
+	<span>SPAN3SPAN3SPAN3 SPAN3SPAN3SPAN3</span><!-- 넘치면 공백문자를 기준으로 줄바꿈한다, 영어의 특성상 띄어쓰기로 구분되는 하나의 단어는 한줄로! -->
+<!-- 	<span>가나다라마가나다라마가나다라마 가나다라마가나다라마</span><!-- 영어와 다르다, 한글은 글자 하나하나를 낱자로 인식 -->
+</div>
+
+</body>
+</html>

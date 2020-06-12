@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>하이퍼링크 태그</h1>
+<h3>a</h3>
+<hr>
+
+<!-- id 속성 글로벌 어트리뷰트 : 여러 태그를 식별해주는 값 -->
+<!-- #top : id가 top인 태그를 호출 -->
+<div id="top"><h3>여기가 TOP 입니다!!!!!!</h3></div>
+
+
+
+<!-- 기본값은 target="_self" -->
+<a href="http://www.google.co.kr">구글로 이동</a>
+<br><br>
+<a href="http://www.google.co.kr" target="_blank">구글로 이동</a> <!-- 새탭에서 구글로 이동 -->
+
+<hr>
+
+<ul>
+	<li> <a href="/tag/tag_01.html">하나</a></li> <!-- 상대경로 -->
+	<li> <a href="./tag_02.html">둘</a></li> <!-- 상대경로 -->
+	<li> <a href="tag_03.html">셋</a></li> <!-- 상대경로 -->
+	<li> <a href="../file/flower.jpg">넷</a></li> <!-- 상대경로 -->
+</ul>
+
+<!-- 상대경로의 시작 문자 -->
+
+<!-- /  - 상대경로 위치의 루트 디렉토리(Context Path)부터 시작하는 경로-->
+
+<!-- ./ - 현재 파일의 디렉토리로부터 시작하는 경로-->
+
+<!-- 곧바로 파일 명 : ./와 같다 -->
+
+<!-- ../ : 현재 파일의 부모디렉토리로부터 시작하는 경로 -->
+
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices ultricies ex vel faucibus. Quisque cursus vulputate ligula sed suscipit. Nunc quis neque urna. Sed id sem aliquam, posuere mi vitae, imperdiet nisl. Morbi dictum ligula est, nec accumsan nisi ultricies id. Vestibulum sem mauris, pharetra quis augue congue, dapibus accumsan eros. Nunc bibendum sem orci, consequat ultricies augue scelerisque in.</p>
+
+<p>Suspendisse metus ligula, accumsan in tempus at, accumsan eu arcu. Proin vulputate neque nec eleifend tempus. Nullam quis fermentum quam. Aenean id ante id eros rutrum placerat. Integer consequat accumsan neque a dapibus. Pellentesque pellentesque ut augue quis vestibulum. In hac habitasse platea dictumst. Quisque luctus euismod mauris, in vestibulum neque vestibulum eget. Quisque vel tempus neque. Cras arcu tellus, pulvinar vitae commodo id, tincidunt eu leo. Nulla bibendum dignissim tincidunt. Cras finibus magna ut lacus porttitor, non tristique ante sollicitudin. Suspendisse non sodales justo, in fringilla lacus. Nulla venenatis, velit sit amet porttitor tempor, nibh orci lobortis nulla, vel sodales quam nisl a eros. Integer varius felis metus, quis dictum nibh sagittis non.</p>
+
+<p>Aliquam lobortis, turpis in tincidunt sagittis, magna arcu convallis nulla, id rhoncus lacus massa vel nulla. Nulla vitae lacus vel mi porttitor malesuada a non sapien. Phasellus et gravida diam, vitae ultrices lorem. Phasellus rhoncus dignissim urna, sed vestibulum magna laoreet id. Cras est urna, facilisis vestibulum molestie vitae, molestie ac elit. Nunc efficitur sollicitudin ante, sed mattis risus lobortis at. Phasellus neque augue, euismod eu sapien eu, lacinia consectetur tellus. Curabitur ac vulputate ex. Maecenas vel metus mauris. Etiam fermentum elit orci, quis feugiat tortor bibendum nec. Etiam eu urna in purus vehicula imperdiet a et nisl. Vestibulum vitae consectetur urna. Sed feugiat felis sed faucibus pellentesque.</p>
+
+<p>Aenean eget tempor metus, eu semper tellus. Nullam in ligula sed turpis malesuada bibendum vel feugiat felis. Fusce urna turpis, tincidunt vitae convallis tincidunt, auctor vitae quam. Donec id purus nulla. Nullam eleifend nulla sed tellus blandit, et ultricies ipsum pulvinar. Proin nec ex tortor. Proin fringilla mi vitae nisl tristique vehicula. Integer tincidunt lacinia nisl. Quisque quis iaculis elit, ut lacinia orci. Sed non tristique nunc. Etiam posuere bibendum nisi ut sagittis. Quisque blandit augue neque, at elementum urna dignissim elementum. Nullam eget mi id sem feugiat luctus eu quis metus. Nam non dignissim orci. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+
+<p>Vestibulum id tincidunt risus, nec suscipit libero. Suspendisse imperdiet id mauris id cursus. Quisque id magna vitae nunc lobortis porttitor ac non nisl. Donec dictum ut leo eget euismod. Aenean eget facilisis leo, mattis placerat arcu. Donec mollis eros ante, eget egestas turpis elementum vitae. Donec sodales mi quis leo viverra, eget dictum dolor convallis. Phasellus ultricies eros eros, eu congue lorem placerat nec. Aenean bibendum lobortis nunc a dictum. Morbi venenatis eros congue fringilla lobortis. Praesent nisl ex, blandit eleifend mi venenatis, luctus venenatis nunc. Nunc volutpat elit eu placerat sollicitudin.</p>
+
+<!-- 앵커가 내부 문서로 걸림 -->
+<a href="#top">TOP으로!</a>
+<br><br>
+
+<!-- 자기 자신으로 가는 상대경로, 서버에서 다시 받아온다 -->
+<a href="#">자기 자신 페이지</a><!-- 비워둬도 됨, # 만 쓰면 없는 아이디이므로 같다 -->
+
+</body>
+</html>

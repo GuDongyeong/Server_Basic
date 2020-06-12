@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+span{ font-size: 30px; }
+
+#span1{
+	background: red;
+	float: left;
+}
+
+#span2{
+	background: green;
+	float: right;
+}
+
+#span3{
+	background: blue;
+}
+
+div{
+	/* 컨텐츠 영역 정렬 */
+	text-align: center;
+	
+	width: 500px;
+	
+	margin: 0 auto;
+	
+	/* block요소의 내부 컨텐츠 정렬 : text-align 사용 */
+	/* block요소의 외부 정렬 : margin: 0 auto; 사용 */
+	
+	/* 외부 정렬을 하려면 width가 설정되어 있어야 한다 */
+	/* 프로젝트할 떄는 1000px 이하로 잡을 것 */
+
+}
+
+body{
+	/* 이렇게 해도 block요소는 가운데 오지 않는다 */
+	text-align: center;
+}
+
+</style>
+
+
+
+</head>
+<body>
+
+<div>
+	<span id="span1">SPAN1</span>
+	<span id="span2">SPAN2</span>
+	<span id="span3">SPAN3</span>
+</div>
+
+
+
+</body>
+</html>
