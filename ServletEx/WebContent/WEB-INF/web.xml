@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>ServletEx</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 톰캣 서버에 Servlet 등록 -->
+  <servlet>
+  	<!-- 톰캣에 등록할 서블릿의 이름 -->
+  	<servlet-name>hi</servlet-name>
+	<!-- 톰캣에 등록되는 서블릿 클래스 -->
+  	<servlet-class>hello.HiServlet</servlet-class>
+  </servlet>
+  <!-- 요청 URL 과 서블릿 클래스를 1:1 매핑 -->
+  <servlet-mapping>
+  	<servlet-name>hi</servlet-name>
+  	<url-pattern>/hi</url-pattern>
+  </servlet-mapping>
+</web-app>
