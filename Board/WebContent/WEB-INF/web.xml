@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Board</display-name>
+  
+  <!-- context root에서 찾아갈 수 있는 폴더들이어야 한다, 있으면 context path로 들어갔을 때 웰컴 페이지가 뜬다, 알아서 포워딩 해줌 -->
+  <welcome-file-list>
+    <welcome-file>main</welcome-file>
+  </welcome-file-list>
+  
+</web-app>
+
+
